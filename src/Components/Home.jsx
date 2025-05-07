@@ -1,6 +1,11 @@
 import React from "react";
 import "./Home.css";
 import Header from "./Header";
+import Pizza from "../Assets/Pizza.jpg";
+import Burger from "../Assets/Burger.webp";
+import Noodles from "../Assets/Noodles.jpg";
+import FrenchFries from "../Assets/FrenchFries.webp";
+import Pasta from "../Assets/Pasta.jpg";
 
 const Home = () => {
   return (
@@ -15,9 +20,42 @@ const Home = () => {
           <h1>Tried</h1> <h1>Tasted</h1> <h1>Trusted</h1>{" "}
         </section>
         <span>Spot for The tasty food Recipes</span>
-        {/* <h1>
-          Tasty Food Recipes <span>Guaranteed</span>
-        </h1> */}
+      </section>
+      <section className="imageContainer">
+        <section className="foodImages">
+          <section className="food">
+            <img src={Pizza} alt="pizza" />
+          </section>
+          <section className="food">
+            <img src={Pasta} />
+          </section>
+          <section className="food">
+            <img src={Burger} />
+          </section>
+          <section className="food">
+            <img src={FrenchFries} />
+          </section>
+          <section className="food">
+            <img src={Noodles} />
+          </section>
+        </section>
+        <section aria-hidden className="foodImages">
+          <section className="food">
+            <img src={Pizza} alt="pizza" />
+          </section>
+          <section className="food">
+            <img src={Pasta} />
+          </section>
+          <section className="food">
+            <img src={Burger} />
+          </section>
+          <section className="food">
+            <img src={FrenchFries} />
+          </section>
+          <section className="food">
+            <img src={Noodles} />
+          </section>
+        </section>
       </section>
     </>
   );
