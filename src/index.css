@@ -6,6 +6,9 @@
   font-family: "Poppins", sans-serif;
 }
 
+:root {
+  background-color: rgb(224, 224, 223);
+}
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
