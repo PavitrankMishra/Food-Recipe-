@@ -9,12 +9,16 @@ const Header = () => {
       <section className="headerContainer">
         <section className="headerLeft">
           <img src={Logo} alt="Logo" />
-          <h1>The logo Company</h1>
+          <span>The logo Company</span>
         </section>
         <section className="headerRight">
           <section className="rightPart">
-            <Link to="/recipes">Search Recipes</Link>
-            <Link tp="/addrecipe">Add Recipes</Link>
+            <Link to="/recipes">
+              <span>Search Recipes</span>
+            </Link>
+            <Link to="/addrecipe">
+              <span>Add Recipes</span>
+            </Link>
           </section>
         </section>
       </section>
