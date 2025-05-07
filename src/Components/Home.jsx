@@ -11,9 +11,13 @@ const Home = () => {
           <p>Food</p>
           <p>Recipes</p>
           <span>Guaranteed</span> */}
-        <h1>
+        <section className="headingContainer">
+          <h1>Tried</h1> <h1>Tasted</h1> <h1>Trusted</h1>{" "}
+        </section>
+        <span>Spot for The tasty food Recipes</span>
+        {/* <h1>
           Tasty Food Recipes <span>Guaranteed</span>
-        </h1>
+        </h1> */}
       </section>
     </>
   );
