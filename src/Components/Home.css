@@ -115,6 +115,8 @@
     justify-content: center;
     height: 300px;
     letter-spacing: 1.2px;
+    line-height: 55px;
+    margin-top: 40px;
     /* border:2px solid red; */
   }
 
@@ -130,5 +132,15 @@
     font-size: 5vw;
     color: #7a2626;
     font-weight: 500;
+  }
+
+  .imageContainer {
+    max-width: 380px;
+    margin-top:40px;
+  }
+
+  .foodImages .food {
+    width:150px;
+    height:150px;
   }
 }
