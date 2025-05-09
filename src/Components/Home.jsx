@@ -7,6 +7,7 @@ import Noodles from "../Assets/Noodles.jpg";
 import FrenchFries from "../Assets/FrenchFries.webp";
 import Pasta from "../Assets/Pasta.jpg";
 import Cake from "../Assets/cake.webp";
+import AboutUs from "./AboutUs";
 
 const Home = () => {
   return (
@@ -71,6 +72,7 @@ const Home = () => {
           </section>
         </section>
       </section>
+      <AboutUs />
     </>
   );
 };
