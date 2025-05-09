@@ -55,7 +55,7 @@
 .imageContainer {
   margin: 0 auto;
   padding: 20px 0;
-  max-width: 1000px;
+  /* max-width: 1000px; */
   overflow: hidden;
   display: flex;
   border-radius: 150px;
@@ -65,7 +65,7 @@
   display: flex;
   gap: 20px;
   padding-right: 20px;
-  animation: scrolling 10s linear infinite;
+  animation: scrolling 20s linear infinite;
 }
 
 .foodImages .food {

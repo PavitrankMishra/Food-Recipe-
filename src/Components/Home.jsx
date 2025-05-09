@@ -6,6 +6,7 @@ import Burger from "../Assets/Burger.webp";
 import Noodles from "../Assets/Noodles.jpg";
 import FrenchFries from "../Assets/FrenchFries.webp";
 import Pasta from "../Assets/Pasta.jpg";
+import Cake from "../Assets/cake.webp";
 
 const Home = () => {
   return (
@@ -33,7 +34,13 @@ const Home = () => {
             <img src={Burger} />
           </section>
           <section className="food">
+            <img src={Cake} />
+          </section>
+          <section className="food">
             <img src={FrenchFries} />
+          </section>
+          <section className="food">
+            <img src={Cake} />
           </section>
           <section className="food">
             <img src={Noodles} />
@@ -47,7 +54,14 @@ const Home = () => {
             <img src={Pasta} />
           </section>
           <section className="food">
+            <img src={Cake} />
+          </section>
+          <section className="food">
             <img src={Burger} />
+          </section>
+
+          <section className="food">
+            <img src={Cake} />
           </section>
           <section className="food">
             <img src={FrenchFries} />
