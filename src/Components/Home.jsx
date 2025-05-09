@@ -8,6 +8,7 @@ import FrenchFries from "../Assets/FrenchFries.webp";
 import Pasta from "../Assets/Pasta.jpg";
 import Cake from "../Assets/cake.webp";
 import AboutUs from "./AboutUs";
+import Banner from "./Banner";
 
 const Home = () => {
   return (
@@ -73,6 +74,7 @@ const Home = () => {
         </section>
       </section>
       <AboutUs />
+      <Banner />
     </>
   );
 };
