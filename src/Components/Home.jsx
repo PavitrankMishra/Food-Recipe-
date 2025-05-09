@@ -9,6 +9,7 @@ import Pasta from "../Assets/Pasta.jpg";
 import Cake from "../Assets/cake.webp";
 import AboutUs from "./AboutUs";
 import Banner from "./Banner";
+import Working from "./Working";
 
 const Home = () => {
   return (
@@ -75,6 +76,7 @@ const Home = () => {
       </section>
       <AboutUs />
       <Banner />
+      <Working />
     </>
   );
 };

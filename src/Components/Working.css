@@ -1,0 +1,23 @@
+.workingContainer {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.workingContainer h1 {
+    font-size: 6vw;
+    text-transform: uppercase;
+    color:#6f0909;
+}
+
+@media screen and (max-width:768px) {
+    .workingContainer h1 {
+        font-size: 8vw;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .workingContainer h1 {
+        font-size: 8vw;
+    }
+}
