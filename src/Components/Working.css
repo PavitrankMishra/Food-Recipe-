@@ -126,7 +126,7 @@
 
 @media screen and (max-width: 502px) {
   .workingContainer h1 {
-    font-size: 8vw;
+    font-size: 10vw;
   }
 
   .leftContainer {
@@ -143,5 +143,12 @@
   .workingContainer .timelineContainer {
     width:70%;
     margin: 15px 25px;
+  }
+
+  .textBox h2 {
+    font-size: 5vw;
+  }
+  .textBox p {
+    font-size: 4vw;
   }
 }
