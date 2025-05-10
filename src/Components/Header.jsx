@@ -8,18 +8,18 @@ const Header = () => {
     <>
       <section className="headerContainer">
         <section className="headerLeft">
-          <img src={Logo} alt="Logo" />
-          <span>The logo Company</span>
+          {/* <img src={Logo} alt="Logo" /> */}
+          <h1>Delicious Bowl</h1>
         </section>
         <section className="headerRight">
-          <section className="rightPart">
+          {/* <section className="rightPart">
             <Link to="/recipes">
               <span>Search Recipes</span>
             </Link>
             <Link to="/addrecipe">
               <span>Add Recipes</span>
             </Link>
-          </section>
+          </section> */}
         </section>
       </section>
     </>
