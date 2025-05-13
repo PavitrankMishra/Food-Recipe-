@@ -1,5 +1,5 @@
 .recipeContainer {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   /* height:87dvh; */
   width: 85%;
   display: flex;
@@ -10,7 +10,7 @@
 }
 
 .recipeHeadingContainer {
-  border: 2px solid black;
+  /* border: 2px solid black; */
   /* max-width: 100%; */
   display: flex;
   align-items: center;
