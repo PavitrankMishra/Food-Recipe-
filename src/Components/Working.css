@@ -5,13 +5,14 @@
   flex-direction: column;
   max-width: 100%;
   overflow:hidden;
-  margin:70wpx 0;
+  margin:70px 0;
 }
 
 .workingContainer h1 {
-  font-size: 6vw;
+  font-size: 7vw;
   text-transform: uppercase;
   color: #6f0909;
+  margin-bottom:40px;
 }
 
 .workingContainer .timeline {
