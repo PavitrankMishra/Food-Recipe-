@@ -1,6 +1,7 @@
 import React from "react";
 import "../Components/AboutUs.css";
 import vegPizza from "../Assets/vegPizza.jpg";
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   return (
@@ -16,12 +17,14 @@ const AboutUs = () => {
               together to create unforgettable dishes.
             </span>
           </section>
-          <button>Explore Recipes</button>
+          <Link to="/recipes">
+            <button>Explore Recipes</button>
+          </Link>
         </section>
         <section className="right1">
-            <section className="rightimageContainer">
-                <img src={vegPizza} className="vegPizza"/>
-            </section>
+          <section className="rightimageContainer">
+            <img src={vegPizza} className="vegPizza" />
+          </section>
         </section>
       </section>
     </>
