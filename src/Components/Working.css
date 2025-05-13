@@ -5,6 +5,7 @@
   flex-direction: column;
   max-width: 100%;
   overflow:hidden;
+  margin:70wpx 0;
 }
 
 .workingContainer h1 {
