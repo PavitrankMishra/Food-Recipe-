@@ -1,32 +1,29 @@
 .recipeContainer {
-  border: 2px solid red;
-  /* height:87dvh; */
+  /* border: 2px solid red; */
   width: 90vw;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 20px auto;
   border-radius: 5px;
-  /* margin: 50px; */
   flex-direction: column;
+  /* border:2px solid green; */
 }
 
-.recipeMain {
-  width: 90vw;
-  border: 2px solid red;
-}
-
-.recipeHeadingContainer {
+.recipeContainer .recipeHeadingContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
-  border: 2px solid salmon;
-  gap: 30px;
-  /* width:70vw; */
+  /* padding: 20px; */
+  /* border: 2px solid salmon; */
+  /* gap: 30px; */
+  margin-top: 20px;
+  width: 77vw;
+  /* border:2px solid red; */
+  /* width: auto; */
 }
 
-.containerLeft {
+.recipeContainer .recipeHeadingContainer .containerLeft {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,31 +31,34 @@
   max-width: 100%;
 }
 
-.containerLeft input {
+.recipeContainer .recipeHeadingContainer .containerLeft input {
   background-color: transparent;
   border: none;
   width: 40vw;
-  height: 40px;
+  height: 44px;
   border-radius: 40px;
   font-size: 16px;
-  border: 2px solid #fd6b47;
+  border: 2px solid #ec795c;
   padding-left: 20px;
+  background-color: rgb(248, 237, 229);
+  letter-spacing: 1.2px;
   color: #333;
 }
 
-.containerLeft input:focus {
+.recipeContainer .recipeHeadingContainer .containerLeft input:focus {
   /* border:2px solid green; */
   outline: none;
 }
 
-.containerLeft input::placeholder {
+.recipeContainer .recipeHeadingContainer .containerLeft input::placeholder {
   text-align: center;
 }
-.containerLeft img {
+
+.recipeContainer .recipeHeadingContainer .containerLeft img {
   width: 50px;
 }
 
-.containerRight {
+.recipeContainer .recipeHeadingContainer .containerRight {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,41 +69,65 @@
   cursor: pointer;
 }
 
-.containerRight p:hover {
-  color: #757578;
+.recipeContainer .recipeHeadingContainer .containerRight .plus,
+.bookmark {
+  display: none;
+}
+.recipeContainer .recipeHeadingContainer .containerRight p:hover {
+  color: #ec795c;
 }
 
-.recipeMiddleContainer {
+.recipeContainer .recipeMiddleContainer {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* width:100%; */
-  width: 80vw;
+  width: 90%;
+  /* border: 2px solid red; */
 }
 
-.recipeMiddleLeft {
-  border: 2px solid red;
+.recipeContainer .recipeMiddleContainer .recipeMiddleLeft {
+  /* border: 2px solid red; */
   width: 35%;
   padding: 20px 0px;
 }
 
-.recipeSection {
+.recipeContainer .recipeMiddleContainer .recipeMiddleLeft .recipeSection {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 10px;
-  border: 2px solid black;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin: 5px 0px;
+  border-bottom: 2px solid #ec795c;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
-.recipe1 {
+.recipeContainer .recipeMiddleContainer .recipeMiddleLeft .recipeSection:hover {
+  box-shadow: 0px -2px 5px #ec795c inset;
+  margin: 5px 0px;
+}
+
+.recipeContainer
+  .recipeMiddleContainer
+  .recipeMiddleLeft
+  .recipeSection
+  .recipe1 {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
 }
-.recipeImage {
+
+.recipeContainer
+  .recipeMiddleContainer
+  .recipeMiddleLeft
+  .recipeSection
+  .recipe1
+  .recipeImage {
   overflow: hidden;
-  border: 2px solid greenyellow;
+  /* border: 2px solid greenyellow; */
   width: 85px;
   /* height: 80px; */
   border-radius: 50%;
@@ -111,29 +135,64 @@
   align-items: center;
   justify-content: center;
 }
-.recipeSection img {
+
+.recipeContainer .recipeMiddleContainer .recipeMiddleLeft .recipeSection img {
   max-width: 100%;
   object-fit: cover;
 }
 
-.recipeInner h1 {
+.recipeContainer
+  .recipeMiddleContainer
+  .recipeMiddleLeft
+  .recipeSection
+  .recipeInner
+  p {
   font-size: 18px;
 }
-.recipeInner {
+
+.recipeContainer
+  .recipeMiddleContainer
+  .recipeMiddleLeft
+  .recipeSection
+  .recipeInner
+  #itemName {
+  font-weight: 500;
+}
+
+.recipeContainer
+  .recipeMiddleContainer
+  .recipeMiddleLeft
+  .recipeSection
+  .recipeInner
+  #personName {
+  font-size: 14px;
+  color: #2f2f2f;
+}
+
+.recipeContainer
+  .recipeMiddleContainer
+  .recipeMiddleLeft
+  .recipeSection
+  .recipeInner {
   /* font-size: 18px; */
   letter-spacing: 1.2px;
 }
 
-.userSection {
-  border: 2px solid red;
+.recipeContainer
+  .recipeMiddleContainer
+  .recipeMiddleLeft
+  .recipeSection
+  .userSection {
+  border: 2px solid #ec795c;
   /* display: inline; */
   width: 25px;
   border-radius: 50%;
   padding: 5px;
   text-align: center;
+  color: #333;
 }
 
-.recipeMiddleRight {
+.recipeContainer .recipeMiddleContainer .recipeMiddleRight {
   border: 2px solid blue;
   width: 65%;
 }
@@ -170,9 +229,9 @@
     width: 99vw;
   }
 
-  .recipeMain {
+  /* .recipeMain {
     width: 99vw;
-  }
+  } */
 
   .recipeMiddleContainer {
     width: 99vw;
@@ -203,11 +262,58 @@
     flex-direction: column;
   }
 
-  .recipeMiddleLeft {
+  .recipeMiddleRight {
     width: 100vw;
   }
 
-  .recipeMiddleRight {
-    width: 100vw;
+  .recipeContainer .recipeMiddleContainer .recipeMiddleLeft {
+    width: 100%;
+    padding: 20px 0px;
+  }
+
+  .recipeContainer .recipeHeadingContainer {
+    overflow: hidden;
+    gap: 10px;
+    padding: 10px 5px;
+    width: auto;
+  }
+
+  .recipeContainer .recipeHeadingContainer .containerLeft img {
+    width: 10vw;
+  }
+
+  .recipeContainer .recipeHeadingContainer .containerLeft input {
+    padding-left: 5px;
+  }
+  .recipeContainer
+    .recipeMiddleContainer
+    .recipeMiddleLeft
+    .recipeSection
+    .recipe1
+    .recipeImage {
+    width: 15vw;
+  }
+
+  .recipeContainer .recipeHeadingContainer .containerRight .addHeading,
+  .bookmarkHeading {
+    display: none;
+  }
+  .recipeContainer .recipeHeadingContainer .containerRight .plus,
+  .bookmark {
+    display: block;
+    color: #ec795c;
+  }
+
+  .recipeContainer .recipeHeadingContainer .containerLeft input {
+    width: 60vw;
+    font-size: 3.25vw;
+  }
+
+  .recipeContainer .recipeHeadingContainer .containerLeft input {
+    color: #757578;
+  }
+
+  .recipeContainer .recipeMiddleContainer {
+    width: 98%;
   }
 }
