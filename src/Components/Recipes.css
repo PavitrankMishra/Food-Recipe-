@@ -197,32 +197,116 @@
   width: 65%;
 }
 
-/* @media screen and (max-width: 578px) {
-  .recipeContainer {
-    width: 98%;
-  }
-  .containerRight {
-    gap: 4px;
-    font-size: 3.25vw;
-  }
+.recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-1 {
+  height: 400px;
+  border: 2px solid red;
+  overflow: hidden;
+}
 
-  .containerLeft img {
-    width: 5vw;
-  }
-  .containerLeft input {
-    background-color: transparent;
-    border: none;
-    width: 40vw;
-    height: 40px;
-    border-radius: 40px;
-    font-size: 2.5vw;
-    letter-spacing: 1.1px;
-  }
+.sec-1 img {
+  width: 100%;
+  height: 100%;
+}
 
-  .containerLeft input::placeholder {
-    font-size: 12px;
-  }
-} */
+.recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5vw;
+  padding: 30px 40px;
+}
+
+.recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-2 .secInner,
+.clockContainer,
+.userContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-2 .secInner {
+  gap: 40px;
+}
+
+.recipeContainer
+  .recipeMiddleContainer
+  .recipeMiddleRight
+  .sec-2
+  .secInner
+  .clock,
+.user,
+.heart,
+.plus,
+.minus {
+  color: #ec795c;
+}
+
+.plus,
+.minus {
+  cursor: pointer;
+}
+
+.recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-3 .check {
+  color: #ec795c;
+  font-size: 24px;
+  padding: 0 40px;
+}
+
+.listContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem 3rem;
+  list-style: none;
+}
+
+ul li {
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+  text-align: center;
+}
+
+.addToCart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 40px;
+  margin: 20px 0;
+  cursor: pointer;
+  background-color: transparent;
+  border:none;
+}
+
+.sec-4 {
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sec-4 button {
+  background-color: transparent;
+  border:none;
+  font-size: 1.5vw;
+}
+
+.sec-4 h1 {
+  font-size: 2vw;
+  margin:10px 0;
+  /* transform: rotate(-5deg); */
+  font-weight: 300;
+}
+
 
 @media screen and (max-width: 800px) {
   .recipeContainer {
