@@ -16,6 +16,7 @@ import { faMinus } from "@fortawesome/free-solid-svg-icons";
 // import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 
 const Recipes = () => {
   // console.log(data);
@@ -177,10 +178,12 @@ const Recipes = () => {
               <h1>HOW TO COOK IT</h1>
               <p>
                 The recipe was carefully designed and tested by{" "}
-                <stron>BBC Good Food.</stron>
+                <strong>BBC Good Food.</strong>
               </p>
               <p>Please check out directions at their website.</p>
-              <button>DIRECTIONS</button>
+              <button className="directions">
+                DIRECTIONS <FontAwesomeIcon icon={faArrowRightLong} />
+              </button>
             </section>
           </section>
         </section>

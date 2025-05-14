@@ -23,9 +23,10 @@
   /* width: auto; */
 }
 
+/* ***************************************************** Left Container of the recipe heading **********************************************/
 .recipeContainer .recipeHeadingContainer .containerLeft {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   gap: 10px;
   max-width: 100%;
@@ -58,6 +59,7 @@
   width: 50px;
 }
 
+/* ***************************************************** Right Container of Rcipe Heading ************************************************* */
 .recipeContainer .recipeHeadingContainer .containerRight {
   display: flex;
   align-items: center;
@@ -77,18 +79,22 @@
   color: #ec795c;
 }
 
+/* ******************************************* Middle Container below the recipeHeading Container *************************************** */
 .recipeContainer .recipeMiddleContainer {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   width: 90%;
   /* border: 2px solid red; */
+  margin: 20px 0;
+  gap: 20px;
 }
 
+/* ************************************************** Left Middle Container below the recipeHeading Container ***************************** */
 .recipeContainer .recipeMiddleContainer .recipeMiddleLeft {
   /* border: 2px solid red; */
   width: 35%;
-  padding: 20px 0px;
+  /* padding: 20px 0px; */
 }
 
 .recipeContainer .recipeMiddleContainer .recipeMiddleLeft .recipeSection {
@@ -192,15 +198,18 @@
   color: #333;
 }
 
+/* **************************************************** Middle Right  Container below the recipe heading Container ************************* */
 .recipeContainer .recipeMiddleContainer .recipeMiddleRight {
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   width: 65%;
 }
 
+/* ************************************************* Section 1 of Middle Right Container ****************************************** */
 .recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-1 {
-  height: 400px;
-  border: 2px solid red;
+  height: 300px;
+  /* border: 2px solid red; */
   overflow: hidden;
+  border-radius: 20px;
 }
 
 .sec-1 img {
@@ -208,11 +217,12 @@
   height: 100%;
 }
 
+/* ************************************************ Section 2 of Middle Right Container ******************************************** */
 .recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 1.5vw;
+  font-size: 1.25vw;
   padding: 30px 40px;
 }
 
@@ -247,33 +257,46 @@
   cursor: pointer;
 }
 
+/* *************************************************** Section 3 of Middle Right Container ****************************************** */
 .recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-3 {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
+
+.recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-3 h2 {
+  padding-bottom: 30px;
+  font-weight: 400;
+}
+
 .recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-3 .check {
   color: #ec795c;
   font-size: 24px;
-  padding: 0 40px;
+  padding: 0 20px;
 }
 
-.listContainer {
+.recipeContainer
+  .recipeMiddleContainer
+  .recipeMiddleRight
+  .sec-3
+  .listContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2.5rem 3rem;
   list-style: none;
+  padding-top: 10px;
+  padding-bottom: 30px;
 }
 
-ul li {
+.recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-3 ul li {
   display: flex;
   /* align-items: center; */
   /* justify-content: center; */
-  text-align: center;
+  /* text-align: center; */
 }
 
-.addToCart {
+.recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-3 .addToCart {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -283,34 +306,110 @@ ul li {
   border-radius: 40px;
   margin: 20px 0;
   cursor: pointer;
-  background-color: transparent;
-  border:none;
+  background-color: rgb(248, 237, 229);
+  border: none;
+  border: 2px solid #ec795c;
+  margin: 20px 0;
+  transition: all 0.3s ease-in-out;
 }
 
-.sec-4 {
+.recipeContainer
+  .recipeMiddleContainer
+  .recipeMiddleRight
+  .sec-3
+  .addToCart:hover {
+  background-color: rgb(253, 231, 215);
+  box-shadow: 0 0 7px #ec795c;
+}
+
+/* ********************************************* Section 4 of Middle Right Container *********************************************** */
+.recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-4 {
   display: flex;
-  align-items:center;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
-.sec-4 button {
+.recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-4 button {
   background-color: transparent;
-  border:none;
+  border: none;
   font-size: 1.5vw;
+  color: #ec795c;
+  margin: 20px 0;
+  outline: none;
+  cursor: pointer;
+  position: relative;
 }
 
-.sec-4 h1 {
+.recipeContainer
+  .recipeMiddleContainer
+  .recipeMiddleRight
+  .sec-4
+  button::after {
+  content: "";
+  height: 3px;
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #ec795c;
+  border-radius: 40px;
+  /* animation: slideIn 0.3s ease-in-out forwards; */
+  transition: width 0.3s ease-in-out;
+}
+
+.recipeContainer
+  .recipeMiddleContainer
+  .recipeMiddleRight
+  .sec-4
+  button:hover::after {
+  width: 100%;
+  transition: width 0.3s ease-in-out;
+}
+
+.recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-4 h1 {
   font-size: 2vw;
-  margin:10px 0;
+  margin: 10px 0;
   /* transform: rotate(-5deg); */
   font-weight: 300;
 }
 
+.recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-4 p {
+  font-size: 1.3vw;
+}
+
+.recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-4 p strong {
+  color: #ec795c;
+  position: relative;
+}
+
+.recipeContainer
+  .recipeMiddleContainer
+  .recipeMiddleRight
+  .sec-4
+  p
+  strong::after {
+  content: "";
+  height: 3px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #ec795c;
+  border-radius: 40px;
+}
 
 @media screen and (max-width: 800px) {
   .recipeContainer {
     width: 99vw;
+  }
+
+  .recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 2vw;
+    padding: 30px 40px;
   }
 
   /* .recipeMain {
