@@ -11,7 +11,7 @@ import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
 // import { faPerson } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
-import a from "../Assets/VegPizza.jpg";
+import a from "../Assets/vegPizza.jpg";
 import { faMinus } from "@fortawesome/free-solid-svg-icons";
 // import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
