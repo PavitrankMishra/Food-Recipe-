@@ -17,7 +17,7 @@ import { faMinus } from "@fortawesome/free-solid-svg-icons";
 import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
-const Recipes = ({ data }) => {
+const Recipes = () => {
   // console.log(data);
   return (
     <>
