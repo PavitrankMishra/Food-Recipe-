@@ -17,9 +17,14 @@ import { faMinus } from "@fortawesome/free-solid-svg-icons";
 import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
-const Recipes = ({ data }) => {
+const Recipes = ({ data, recipe }) => {
   console.log(data);
+  console.log(recipe);
+  let d1 = [{ ...recipe }];
+  console.log(d1);
+  console.log(d1.length);
   return (
     <>
       <Header />
@@ -62,64 +67,74 @@ const Recipes = ({ data }) => {
           </section>
 
           <section className="recipeMiddleRight">
-            <section className="sec-1">
-              <img src={a} alt="Something" />
-              <p>Something</p>
-            </section>
-            <section className="sec-2">
-              <section className="secInner">
-                <section className="clockContainer">
-                  <FontAwesomeIcon icon={faClock} className="clock" />
-                  <p>60 Minutes</p>
-                </section>
-                <section className="userContainer">
-                  <FontAwesomeIcon icon={faUser} className="user" />
-                  <p>
-                    <span>4</span> Servings
-                  </p>
-                  <FontAwesomeIcon icon={faMinus} className="minus" />
-                  <FontAwesomeIcon icon={faPlus} className="plus" />
-                </section>
-              </section>
-              <section className="secOuter">
-                <section className="likeContainer">
-                  <FontAwesomeIcon icon={faHeart} className="heart" />
-                </section>
-              </section>
-            </section>
-            <section className="sec-3">
-              <h2>Recipe Ingredients</h2>
-              <ul className="listContainer">
-                <li>
-                  <FontAwesomeIcon icon={faCircleCheck} className="check" />
-                  <p>400 can chickpeas, rinsed and drained</p>
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faCircleCheck} className="check" />
-                  <p>400 can chickpeas, rinsed and drained</p>
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faCircleCheck} className="check" />
-                  <p>400 can chickpeas, rinsed and drained</p>
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faCircleCheck} className="check" />
-                  <p>400 can chickpeas, rinsed and drained</p>
-                </li>
-              </ul>
-              <button className="addToCart">ADD TO SHOPPING LIST</button>
-            </section>
-            <section className="sec-4">
-              <h1>HOW TO COOK IT</h1>
-              <p>
-                The recipe was carefully designed and tested by{" "}
-                <strong>BBC Good Food.</strong>
-              </p>
-              <p>Please check out directions at their website.</p>
-              <button className="directions">
-                DIRECTIONS <FontAwesomeIcon icon={faArrowRightLong} />
-              </button>
-            </section>
+            {d1 && d1.length > 0 ? (
+              d1.map((i, index) => (
+                <>
+                  <section className="sec-1">
+                    <img src={i.image_url} alt="Something" />
+                    <p>Something</p>
+                  </section>
+                  <section className="sec-2">
+                    <section className="secInner">
+                      <section className="clockContainer">
+                        <FontAwesomeIcon icon={faClock} className="clock" />
+                        <p>{i.cooking_time} minutes</p>
+                      </section>
+                      <section className="userContainer">
+                        <FontAwesomeIcon icon={faUser} className="user" />
+                        <p>
+                          <span>{i.servings}</span> Servings
+                        </p>
+                        <FontAwesomeIcon icon={faMinus} className="minus" />
+                        <FontAwesomeIcon icon={faPlus} className="plus" />
+                      </section>
+                    </section>
+                    <section className="secOuter">
+                      <section className="likeContainer">
+                        <FontAwesomeIcon icon={faHeart} className="heart" />
+                      </section>
+                    </section>
+                  </section>
+                  <section className="sec-3">
+                    <h2>Recipe Ingredients</h2>
+
+                    {i.ingredients && i.ingredients.length > 0 ? (
+                      <ul className="listContainer">
+                        {i.ingredients.map((ig, index) => (
+                          <li key={index}>
+                            <FontAwesomeIcon
+                              icon={faCircleCheck}
+                              className="check"
+                            />
+                            <p>{`${ig.quantity} ${ig.unit} ${ig.description}`}</p>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p>There are no ingredients listed.</p>
+                    )}
+
+                    <button className="addToCart">ADD TO SHOPPING LIST</button>
+                  </section>
+
+                  <section className="sec-4">
+                    <h1>HOW TO COOK IT</h1>
+                    <p>
+                      The recipe was carefully designed and tested by{" "}
+                      <strong>{i.publisher}.</strong>
+                    </p>
+                    <p>Please check out directions at their website.</p>
+                    <Link to={i.source_url}>
+                      <button className="directions">
+                        DIRECTIONS <FontAwesomeIcon icon={faArrowRightLong} />
+                      </button>
+                    </Link>
+                  </section>
+                </>
+              ))
+            ) : (
+              <p>There is no data</p>
+            )}
           </section>
         </section>
       </section>
