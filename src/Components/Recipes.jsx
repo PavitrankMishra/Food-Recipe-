@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import "./Recipes.css";
 // import {useState, useEffect} from "react";
@@ -19,12 +19,15 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-const Recipes = ({ data, recipe }) => {
-  console.log(data);
-  console.log(recipe);
+const Recipes = ({ data, recipe, getData }) => {
   let d1 = [{ ...recipe }];
-  console.log(d1);
-  console.log(d1.length);
+
+  const [inputValue, setInputValue] = useState("");
+
+  useEffect(() => {
+    getData(inputValue);
+    // console.log(inputValue);
+  }, [inputValue]);
   return (
     <>
       <Header />
@@ -32,7 +35,12 @@ const Recipes = ({ data, recipe }) => {
         <section className="recipeHeadingContainer">
           <section className="containerLeft">
             <img src={Logo} className="headingLogo" />
-            <input type="text" placeholder="Search over 1,000,000 recipes" />
+            <input
+              type="text"
+              placeholder="Search over 1,000,000 recipes"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+            />
           </section>
           <section className="containerRight">
             <FontAwesomeIcon icon={faPlus} className="plus" />

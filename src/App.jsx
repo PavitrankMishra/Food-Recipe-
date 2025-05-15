@@ -11,14 +11,16 @@ const App = () => {
   // const [data2, setData2] = useState([]);
   const API_KEY = "77cd4da4-562b-4655-b264-eb7c881297d4";
 
+  const [inputV, setInputV] = useState("");
+
   useEffect(() => {
-    fetch("https://forkify-api.herokuapp.com/api/search?q=pasta")
+    fetch(`https://forkify-api.herokuapp.com/api/search?q=${inputV}`)
       .then((res) => res.json())
       .then((resData) => {
         setData(resData.recipes); // or whatever your response structure is
       })
       .catch((error) => console.error("Error fetching recipes:", error));
-  }, []);
+  }, [inputV]);
 
   useEffect(() => {
     fetch(
@@ -33,13 +35,18 @@ const App = () => {
   }, []);
 
   console.log(recipe);
+
+  function getData(inputVal) {
+    console.log("From App" + inputVal);
+    setInputV(inputVal);
+  }
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" index element={<Home />} />
         <Route
           path="/recipes"
-          element={<Recipes data={data} recipe={recipe} />}
+          element={<Recipes data={data} recipe={recipe} getData={getData} />}
         />
         <Route path="*" element={<NotFound />} />
       </Routes>
