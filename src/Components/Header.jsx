@@ -9,7 +9,11 @@ const Header = () => {
       <section className="headerContainer">
         <section className="headerLeft">
           {/* <img src={Logo} alt="Logo" /> */}
-          <h1>Delicious Bowl</h1>
+          <h1>MEALZO</h1>
+          {/* <h1 class="logo">
+            <span class="logo-main">Delicious</span>
+            <span class="logo-sub">Bowl</span>
+          </h1> */}
         </section>
         <section className="headerRight">
           {/* <section className="rightPart">
