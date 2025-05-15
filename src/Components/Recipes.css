@@ -132,19 +132,19 @@
   .recipeSection
   .recipe1
   .recipeImage {
-  overflow: hidden;
-  /* border: 2px solid greenyellow; */
-  width: 5vw;
-  /* height: 80px; */
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 60px;
+  height: 60px;
 }
 
 .recipeContainer .recipeMiddleContainer .recipeMiddleLeft .recipeSection img {
-  max-width: 100%;
   object-fit: cover;
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
 }
 
 .recipeContainer
@@ -153,7 +153,7 @@
   .recipeSection
   .recipeInner
   p {
-  font-size: 1.75vw;
+  /* font-size: 1.75vw; */
 }
 
 .recipeContainer

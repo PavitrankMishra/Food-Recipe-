@@ -9,24 +9,33 @@ const App = () => {
   const [data, setData] = useState([]);
   // const [data2, setData2] = useState([]);
   const API_KEY = "77cd4da4-562b-4655-b264-eb7c881297d4";
-  useEffect(() => {
-    const fetchRecipes = async () => {
-      try {
-        const res = await fetch(
-          "https://forkify-api.herokuapp.com/api/v2/recipes?search=pizza"
-        );
-        if (!res.ok) {
-          throw new Error("The response was not ok");
-        }
+  // useEffect(() => {
+  //   const fetchRecipes = async () => {
+  //     try {
+  //       const res = await fetch(
+  //         "https://forkify-api.herokuapp.com/api/v2/recipes?search=pizza"
+  //       );
+  //       if (!res.ok) {
+  //         throw new Error("The response was not ok");
+  //       }
 
-        const data = await res.json();
-        setData(data);
-        console.log(data);
-      } catch (e) {
-        console.log(e.message);
-      }
-    };
-    fetchRecipes();
+  //       const data = await res.json();
+  //       setData(data);
+  //       console.log(data);
+  //     } catch (e) {
+  //       console.log(e.message);
+  //     }
+  //   };
+  //   fetchRecipes();
+  // }, []);
+
+  useEffect(() => {
+    fetch("https://forkify-api.herokuapp.com/api/search?q=pasta")
+      .then((res) => res.json())
+      .then((resData) => {
+        setData(resData.recipes); // or whatever your response structure is
+      })
+      .catch((error) => console.error("Error fetching recipes:", error));
   }, []);
 
   return (

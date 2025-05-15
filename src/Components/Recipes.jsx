@@ -18,8 +18,8 @@ import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 
-const Recipes = () => {
-  // console.log(data);
+const Recipes = ({ data }) => {
+  console.log(data);
   return (
     <>
       <Header />
@@ -36,93 +36,31 @@ const Recipes = () => {
             <p className="bookmarkHeading">Bookmark Recipe</p>
           </section>
         </section>
+
         <section className="recipeMiddleContainer">
           <section className="recipeMiddleLeft">
-            <section className="recipeSection">
-              <section className="recipe1">
-                <section className="recipeImage">
-                  <img src={Pasta} />
+            {data && data.length > 0 ? (
+              data.map((item, index) => (
+                <section className="recipeSection" key={index}>
+                  <section className="recipe1">
+                    <section className="recipeImage">
+                      <img src={item.image_url} alt={item.title} />
+                    </section>
+                    <section className="recipeInner">
+                      <p id="itemName">{item.title}</p>
+                      <p id="personName">{item.publisher}</p>
+                    </section>
+                  </section>
+                  <section className="userSection">
+                    <FontAwesomeIcon icon={faUser} />
+                  </section>
                 </section>
-                <section className="recipeInner">
-                  <p id="itemName">Pizza</p>
-                  <p id="personName">Divesh</p>
-                </section>
-              </section>
-              <section className="userSection">
-                <FontAwesomeIcon icon={faUser} />
-              </section>
-            </section>
-            <section className="recipeSection">
-              <section className="recipe1">
-                <section className="recipeImage">
-                  <img src={Pasta} />
-                </section>
-                <section className="recipeInner">
-                  <p id="itemName">Pizza</p>
-                  <p id="personName">Divesh</p>
-                </section>
-              </section>
-              <section className="userSection">
-                <FontAwesomeIcon icon={faUser} />
-              </section>
-            </section>
-            <section className="recipeSection">
-              <section className="recipe1">
-                <section className="recipeImage">
-                  <img src={Pasta} />
-                </section>
-                <section className="recipeInner">
-                  <p id="itemName">Pizza</p>
-                  <p id="personName">Divesh</p>
-                </section>
-              </section>
-              <section className="userSection">
-                <FontAwesomeIcon icon={faUser} />
-              </section>
-            </section>
-            <section className="recipeSection">
-              <section className="recipe1">
-                <section className="recipeImage">
-                  <img src={Pasta} />
-                </section>
-                <section className="recipeInner">
-                  <p id="itemName">Pizza</p>
-                  <p id="personName">Divesh</p>
-                </section>
-              </section>
-              <section className="userSection">
-                <FontAwesomeIcon icon={faUser} />
-              </section>
-            </section>
-            <section className="recipeSection">
-              <section className="recipe1">
-                <section className="recipeImage">
-                  <img src={Pasta} />
-                </section>
-                <section className="recipeInner">
-                  <p id="itemName">Pizza</p>
-                  <p id="personName">Divesh</p>
-                </section>
-              </section>
-              <section className="userSection">
-                <FontAwesomeIcon icon={faUser} />
-              </section>
-            </section>
-            <section className="recipeSection">
-              <section className="recipe1">
-                <section className="recipeImage">
-                  <img src={Pasta} />
-                </section>
-                <section className="recipeInner">
-                  <p id="itemName">Pizza</p>
-                  <p id="personName">Divesh</p>
-                </section>
-              </section>
-              <section className="userSection">
-                <FontAwesomeIcon icon={faUser} />
-              </section>
-            </section>
+              ))
+            ) : (
+              <p>There is no data</p>
+            )}
           </section>
+
           <section className="recipeMiddleRight">
             <section className="sec-1">
               <img src={a} alt="Something" />
@@ -169,10 +107,7 @@ const Recipes = () => {
                   <p>400 can chickpeas, rinsed and drained</p>
                 </li>
               </ul>
-              <button className="addToCart">
-                <FontAwesomeIcon icon={faCartShopping} />
-                ADD TO SHOPPING LIST
-              </button>
+              <button className="addToCart">ADD TO SHOPPING LIST</button>
             </section>
             <section className="sec-4">
               <h1>HOW TO COOK IT</h1>
