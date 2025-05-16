@@ -22,9 +22,12 @@ import { Link } from "react-router-dom";
 const Recipes = ({ data, recipe, getData }) => {
   let [res_Per_Page, setResults_Per_Page] = useState(10);
   let [page, setPage] = useState(1);
-
+  let startIndex = (page - 1) * res_Per_Page;
+  let endIndex = page * res_Per_Page;
+  const currentData = data?.slice(startIndex, endIndex);
   if (data) {
     console.log(data);
+    console.log(data.length);
   }
 
   function handlePreviousList() {
@@ -71,8 +74,8 @@ const Recipes = ({ data, recipe, getData }) => {
         <section className="recipeMiddleContainer">
           <section className="recipeMiddleLeft">
             <section>
-              {data && data.length > 0 ? (
-                data.map((item, index) => (
+              {currentData && currentData.length > 0 ? (
+                currentData.map((item, index) => (
                   <>
                     <section className="recipeSection" key={index}>
                       <section className="recipe1">
@@ -94,10 +97,18 @@ const Recipes = ({ data, recipe, getData }) => {
                 <p>There is no data</p>
               )}
               <section className="buttonContainer">
-                <button className="butonLeft" onClick={handlePreviousList}>
+                <button
+                  className="butonLeft"
+                  onClick={handlePreviousList}
+                  disabled={page === 1}
+                >
                   Prev
                 </button>
-                <button className="buttonRight" onClick={handleNextList}>
+                <button
+                  className="buttonRight"
+                  onClick={handleNextList}
+                  disabled={page >= Math.ceil(data?.length / res_Per_Page)}
+                >
                   Next
                 </button>
               </section>
