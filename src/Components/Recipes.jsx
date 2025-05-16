@@ -17,6 +17,7 @@ import {
   faArrowRightLong,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { faHeart as faHeartSolid } from "@fortawesome/free-solid-svg-icons";
 
 const Recipes = ({ data, recipe, getData, getId }) => {
   const [resPerPage, setResPerPage] = useState(10);
@@ -62,6 +63,11 @@ const Recipes = ({ data, recipe, getData, getId }) => {
       };
     }) || [];
 
+  const [bookMarked, setBookMarked] = useState(false);
+
+  const handleBookmark = () => {
+    setBookMarked((prev) => !prev);
+  };
   return (
     <>
       <Header />
@@ -81,7 +87,7 @@ const Recipes = ({ data, recipe, getData, getId }) => {
             <FontAwesomeIcon icon={faPlus} className="plus" />
             <FontAwesomeIcon icon={faBookmark} className="bookmark" />
             <p className="addHeading">Add Recipe</p>
-            <p className="bookmarkHeading">Bookmark Recipe</p>
+            <p className="bookmarkHeading">Bookmark</p>
           </section>
         </section>
 
@@ -167,7 +173,12 @@ const Recipes = ({ data, recipe, getData, getId }) => {
 
                   <section className="secOuter">
                     <section className="likeContainer">
-                      <FontAwesomeIcon icon={faHeart} className="heart" />
+                      <button onClick={handleBookmark}>
+                        <FontAwesomeIcon
+                          icon={bookMarked ? faHeartSolid : faHeart}
+                          className="heart"
+                        />
+                      </button>
                     </section>
                   </section>
                 </section>
