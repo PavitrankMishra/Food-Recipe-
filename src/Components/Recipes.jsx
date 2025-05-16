@@ -190,10 +190,10 @@ const Recipes = ({ data, recipe, getData, getId }) => {
                   ) : (
                     <p>There are no ingredients listed.</p>
                   )}
-                  <button className="addToCart">
+                  {/* <button className="addToCart">
                     <FontAwesomeIcon icon={faCartShopping} /> ADD TO SHOPPING
                     LIST
-                  </button>
+                  </button> */}
                 </section>
 
                 <section className="sec-4">
