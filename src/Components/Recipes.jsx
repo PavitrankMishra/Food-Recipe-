@@ -18,6 +18,7 @@ import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { useRef } from "react";
 
 const Recipes = ({ data, recipe, getData, getId }) => {
   let [res_Per_Page, setResults_Per_Page] = useState(10);
@@ -28,6 +29,25 @@ const Recipes = ({ data, recipe, getData, getId }) => {
   if (data) {
     console.log(data);
     console.log(data.length);
+  }
+
+  const countRef = useRef(0);
+
+  // useEffect(() => {
+  //   count.current = count.current + 1;
+  // }, []);
+
+  console.log(countRef.current);
+  function incrementCount() {
+    if (+countRef.current.innerText >= 0) {
+      countRef.current.innerText = +countRef.current.innerText + 1;
+    }
+  }
+
+  function decrementCount() {
+    if (+countRef.current.innerText > 0) {
+      countRef.current.innerText = +countRef.current.innerText - 1;
+    }
   }
 
   function handlePreviousList() {
@@ -143,10 +163,18 @@ const Recipes = ({ data, recipe, getData, getId }) => {
                       <section className="userContainer">
                         <FontAwesomeIcon icon={faUser} className="user" />
                         <p>
-                          <span>{i.servings}</span> Servings
+                          <span ref={countRef}>4</span> Servings
                         </p>
-                        <FontAwesomeIcon icon={faMinus} className="minus" />
-                        <FontAwesomeIcon icon={faPlus} className="plus" />
+                        <FontAwesomeIcon
+                          icon={faMinus}
+                          className="minus"
+                          onClick={decrementCount}
+                        />
+                        <FontAwesomeIcon
+                          icon={faPlus}
+                          className="plus"
+                          onClick={incrementCount}
+                        />
                       </section>
                     </section>
                     <section className="secOuter">

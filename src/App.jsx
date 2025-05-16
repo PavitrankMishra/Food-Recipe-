@@ -32,17 +32,17 @@ const App = () => {
   // fetchData();
 
 
-  useEffect(() => {
-    fetch(
-      `https://forkify-api.herokuapp.com/api/v2/recipes?search=${inputV}&key=d348a0b0-c7b8-4539-b6a6-80f883fdef51`
-    )
-      .then((res) => res.json())
-      .then((resData) => {
-        console.log("API Response Data:", resData);
-        setData(resData?.data?.recipes || []);
-      })
-      .catch((error) => console.error("Error fetching recipes:", error));
-  }, [inputV]);
+  // useEffect(() => {
+  //   fetch(
+  //     `https://forkify-api.herokuapp.com/api/v2/recipes?search=${inputV}&key=d348a0b0-c7b8-4539-b6a6-80f883fdef51`
+  //   )
+  //     .then((res) => res.json())
+  //     .then((resData) => {
+  //       console.log("API Response Data:", resData);
+  //       setData(resData?.data?.recipes || []);
+  //     })
+  //     .catch((error) => console.error("Error fetching recipes:", error));
+  // }, [inputV]);
 
   useEffect(() => {
     fetch(`https://forkify-api.herokuapp.com/api/v2/recipes/${inputID}`)
