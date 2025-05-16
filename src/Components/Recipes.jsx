@@ -20,6 +20,24 @@ import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 const Recipes = ({ data, recipe, getData }) => {
+  let [res_Per_Page, setResults_Per_Page] = useState(10);
+  let [page, setPage] = useState(1);
+
+  if (data) {
+    console.log(data);
+  }
+
+  function handlePreviousList() {
+    console.log("Handle Prev List Clicked");
+    setPage((p) => p - 1);
+    console.log(page);
+  }
+
+  function handleNextList() {
+    console.log("Handle NExt Lit clicked");
+    setPage((p) => p + 1);
+    console.log(page);
+  }
   let d1 = [{ ...recipe }];
 
   const [inputValue, setInputValue] = useState("");
@@ -52,26 +70,38 @@ const Recipes = ({ data, recipe, getData }) => {
 
         <section className="recipeMiddleContainer">
           <section className="recipeMiddleLeft">
-            {data && data.length > 0 ? (
-              data.map((item, index) => (
-                <section className="recipeSection" key={index}>
-                  <section className="recipe1">
-                    <section className="recipeImage">
-                      <img src={item.image_url} alt={item.title} />
+            <section>
+              {data && data.length > 0 ? (
+                data.map((item, index) => (
+                  <>
+                    <section className="recipeSection" key={index}>
+                      <section className="recipe1">
+                        <section className="recipeImage">
+                          <img src={item.image_url} alt={item.title} />
+                        </section>
+                        <section className="recipeInner">
+                          <p id="itemName">{item.title}</p>
+                          <p id="personName">{item.publisher}</p>
+                        </section>
+                      </section>
+                      <section className="userSection">
+                        <FontAwesomeIcon icon={faUser} />
+                      </section>
                     </section>
-                    <section className="recipeInner">
-                      <p id="itemName">{item.title}</p>
-                      <p id="personName">{item.publisher}</p>
-                    </section>
-                  </section>
-                  <section className="userSection">
-                    <FontAwesomeIcon icon={faUser} />
-                  </section>
-                </section>
-              ))
-            ) : (
-              <p>There is no data</p>
-            )}
+                  </>
+                ))
+              ) : (
+                <p>There is no data</p>
+              )}
+              <section className="buttonContainer">
+                <button className="butonLeft" onClick={handlePreviousList}>
+                  Prev
+                </button>
+                <button className="buttonRight" onClick={handleNextList}>
+                  Next
+                </button>
+              </section>
+            </section>
           </section>
 
           <section className="recipeMiddleRight">
