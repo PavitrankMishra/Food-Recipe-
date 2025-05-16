@@ -98,7 +98,7 @@
 }
 
 .recipeContainer .recipeMiddleContainer .recipeMiddleLeft .buttonContainer {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   display: flex;
   align-items: center;
   justify-content: space-between;
