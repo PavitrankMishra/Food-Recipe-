@@ -19,7 +19,7 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-const Recipes = ({ data, recipe, getData }) => {
+const Recipes = ({ data, recipe, getData, getId }) => {
   let [res_Per_Page, setResults_Per_Page] = useState(10);
   let [page, setPage] = useState(1);
   let startIndex = (page - 1) * res_Per_Page;
@@ -44,11 +44,18 @@ const Recipes = ({ data, recipe, getData }) => {
   let d1 = [{ ...recipe }];
 
   const [inputValue, setInputValue] = useState("");
+  const [inputId, setInputId] = useState("");
 
   useEffect(() => {
     getData(inputValue);
     // console.log(inputValue);
   }, [inputValue]);
+
+  function sendID(id) {
+    console.log(id);
+    getId(id);
+  }
+
   return (
     <>
       <Header />
@@ -77,7 +84,11 @@ const Recipes = ({ data, recipe, getData }) => {
               {currentData && currentData.length > 0 ? (
                 currentData.map((item, index) => (
                   <>
-                    <section className="recipeSection" key={index}>
+                    <section
+                      className="recipeSection"
+                      key={index}
+                      onClick={() => sendID(item.id)}
+                    >
                       <section className="recipe1">
                         <section className="recipeImage">
                           <img src={item.image_url} alt={item.title} />

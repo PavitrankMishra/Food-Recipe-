@@ -9,30 +9,50 @@ const App = () => {
   const [data, setData] = useState([]);
   const [recipe, setRecipe] = useState([]);
   // const [data2, setData2] = useState([]);
-  const API_KEY = "77cd4da4-562b-4655-b264-eb7c881297d4";
+  const API_KEY = "d348a0b0-c7b8-4539-b6a6-80f883fdef51";
 
-  const [inputV, setInputV] = useState("");
+  const [inputV, setInputV] = useState("Pizza");
+  const [inputID, setInputID] = useState("664c8f193e7aa067e94e8297");
+
+  // const fetchData = async function () {
+  //   try {
+  //     const res = await fetch(
+  //       "https://forkify-api.herokuapp.com/api/v2/recipes?search=pizza&key=d348a0b0-c7b8-4539-b6a6-80f883fdef51"
+  //     );
+  //     if (!res.ok) {
+  //       throw new Error("Response was not ok");
+  //     }
+  //     const data = await res.json();
+  //     console.log(data);
+  //   } catch (error) {
+  //     console.log("Error :" + error);
+  //   }
+  // };
+
+  // fetchData();
+
 
   useEffect(() => {
-    fetch(`https://forkify-api.herokuapp.com/api/search?q=${inputV}`)
+    fetch(
+      `https://forkify-api.herokuapp.com/api/v2/recipes?search=${inputV}&key=d348a0b0-c7b8-4539-b6a6-80f883fdef51`
+    )
       .then((res) => res.json())
       .then((resData) => {
-        setData(resData.recipes); // or whatever your response structure is
+        console.log("API Response Data:", resData);
+        setData(resData?.data?.recipes || []);
       })
       .catch((error) => console.error("Error fetching recipes:", error));
   }, [inputV]);
 
   useEffect(() => {
-    fetch(
-      "https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bc886"
-    )
+    fetch(`https://forkify-api.herokuapp.com/api/v2/recipes/${inputID}`)
       .then((res) => res.json())
       .then((resData) => {
         setRecipe(resData.data.recipe);
         // console.log(resData.data.recipe.length);
       })
       .catch((error) => console.log("Error fetching data: ", error));
-  }, []);
+  }, [inputID]);
 
   console.log(recipe);
 
@@ -40,13 +60,25 @@ const App = () => {
     console.log("From App" + inputVal);
     setInputV(inputVal);
   }
+
+  function getId(id) {
+    console.log("The input Id is: " + id);
+    setInputID(id);
+  }
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" index element={<Home />} />
         <Route
           path="/recipes"
-          element={<Recipes data={data} recipe={recipe} getData={getData} />}
+          element={
+            <Recipes
+              data={data}
+              recipe={recipe}
+              getData={getData}
+              getId={getId}
+            />
+          }
         />
         <Route path="*" element={<NotFound />} />
       </Routes>
