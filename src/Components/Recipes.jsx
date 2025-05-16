@@ -43,7 +43,7 @@ const Recipes = ({ data, recipe, getData, getId }) => {
   }
   let d1 = [{ ...recipe }];
 
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState("Pizza");
   const [inputId, setInputId] = useState("");
 
   useEffect(() => {
