@@ -23,7 +23,7 @@ const Recipes = ({ data, recipe, getData, getId }) => {
   const [resPerPage, setResPerPage] = useState(10);
   const [page, setPage] = useState(1);
   const [inputValue, setInputValue] = useState("Pizza");
-  const [servings, setServings] = useState(recipe?.servings || 4); // default 4 servings
+  const [servings, setServings] = useState(recipe?.servings || 4);
 
   const startIndex = (page - 1) * resPerPage;
   const endIndex = page * resPerPage;
@@ -43,7 +43,7 @@ const Recipes = ({ data, recipe, getData, getId }) => {
 
   const sendID = (id) => {
     getId(id);
-    setServings(recipe?.servings || 4); // Reset to default when a new recipe is selected
+    setServings(recipe?.servings || 4);
   };
 
   const incrementCount = () => {
@@ -74,18 +74,23 @@ const Recipes = ({ data, recipe, getData, getId }) => {
         return [...prev, recipe];
       }
     });
+    console.log("Bookmarked clicked");
   }
 
+  const [isVisible, setIsVisible] = useState(false);
+
   const handleVisibility = () => {
-    const bookmarkSection = document.querySelector(".bookmarksSection");
-    bookmarkSection.classList.toggle("visibility");
+    setIsVisible((prev) => !prev);
+    console.log(isVisible);
   };
 
   return (
     <>
       <Header />
+      {/* The main container that contains all the sub parts */}
       <section className="recipeContainer">
-        {/* Top search and actions */}
+
+        {/* The container that contains recipe heading */}
         <section className="recipeHeadingContainer">
           <section className="containerLeft">
             <img src={Logo} className="headingLogo" alt="logo" />
@@ -98,11 +103,15 @@ const Recipes = ({ data, recipe, getData, getId }) => {
           </section>
           <section className="containerRight">
             <FontAwesomeIcon icon={faPlus} className="plus" />
-            <FontAwesomeIcon icon={faBookmark} className="bookmark" />
+            <button onClick={handleVisibility}>
+              <FontAwesomeIcon icon={faBookmark} className="bookmark" />
+            </button>
             <p className="addHeading">Add Recipe</p>
             <section className="bookmarkWrapper">
               <p className="bookmarkHeading">Bookmark</p>
-              <section className="bookmarksSection">
+              <section
+                className={`bookmarksSection ${isVisible ? "visibility" : ""}`}
+              >
                 <section className="bookmarkedVisible">
                   {bookMarkedRecipes.length > 0 ? (
                     bookMarkedRecipes.map((item) => (
