@@ -476,7 +476,7 @@
 .recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-4 h1 {
   font-size: 2vw;
   margin: 10px 0;
-  transform: rotate(-5deg);
+  /* transform: rotate(-5deg); */
   font-weight: 300;
 }
 
@@ -739,7 +739,7 @@
 
   .bookmarkedVisible {
     padding: 0;
-    width: 180px;
+    /* width: 180px; */
   }
 
   .bookmarkedVisible p {
@@ -749,7 +749,8 @@
   .bookmarkedVisible .content {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 4px;
+    margin: 10px 4px;
   }
 }
