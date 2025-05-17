@@ -4,6 +4,7 @@ import Home from "../src/Components/Home";
 import Recipes from "./Components/Recipes";
 import NotFound from "./Components/NotFound";
 import { useState, useEffect } from "react";
+import AddRecipe from "./Components/AddRecipe";
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -30,7 +31,6 @@ const App = () => {
   // };
 
   // fetchData();
-
 
   // useEffect(() => {
   //   fetch(
@@ -80,6 +80,7 @@ const App = () => {
             />
           }
         />
+        {/* <Route path="/recipes" element={<AddRecipe />} /> */}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

@@ -63,11 +63,24 @@ const Recipes = ({ data, recipe, getData, getId }) => {
       };
     }) || [];
 
-  const [bookMarked, setBookMarked] = useState(false);
+  const [bookMarkedRecipes, setBookMarkedRecipes] = useState([]);
 
-  const handleBookmark = () => {
-    setBookMarked((prev) => !prev);
+  function handleBookMark(recipe) {
+    setBookMarkedRecipes((prev) => {
+      const alreadyBookMarked = prev.find((r) => r.id === recipe.id);
+      if (alreadyBookMarked) {
+        return prev.filter((r) => r.id !== recipe.id);
+      } else {
+        return [...prev, recipe];
+      }
+    });
+  }
+
+  const handleVisibility = () => {
+    const bookmarkSection = document.querySelector(".bookmarksSection");
+    bookmarkSection.classList.toggle("visibility");
   };
+
   return (
     <>
       <Header />
@@ -87,7 +100,28 @@ const Recipes = ({ data, recipe, getData, getId }) => {
             <FontAwesomeIcon icon={faPlus} className="plus" />
             <FontAwesomeIcon icon={faBookmark} className="bookmark" />
             <p className="addHeading">Add Recipe</p>
-            <p className="bookmarkHeading">Bookmark</p>
+            <section style={{ position: "relative" }}>
+              <p className="bookmarkHeading">Bookmark</p>
+              <section className="bookmarksSection ">
+                <section className="bookmarkedVisible">
+                  {bookMarkedRecipes.length > 0 ? (
+                    bookMarkedRecipes.map((item) => (
+                      <section key={item.id} className="content">
+                        <section className="imgDiv">
+                          <img src={item.image_url} />
+                        </section>
+                        <section>
+                          <p>{item.title}</p>
+                          <p>{item.publisher}</p>
+                        </section>
+                      </section>
+                    ))
+                  ) : (
+                    <p>No bookmarks yet</p>
+                  )}
+                </section>
+              </section>
+            </section>
           </section>
         </section>
 
@@ -173,12 +207,36 @@ const Recipes = ({ data, recipe, getData, getId }) => {
 
                   <section className="secOuter">
                     <section className="likeContainer">
-                      <button onClick={handleBookmark}>
+                      <button onClick={() => handleBookMark(recipe)}>
                         <FontAwesomeIcon
-                          icon={bookMarked ? faHeartSolid : faHeart}
+                          icon={
+                            bookMarkedRecipes.find((r) => r.id === recipe.id)
+                              ? faHeartSolid
+                              : faHeart
+                          }
                           className="heart"
                         />
                       </button>
+
+                      {/* <button onClick={handleBookmark}>
+                        <FontAwesomeIcon
+                          icon={
+                            bookmarkedRecipes.find((r) => r.id === recipe.id)
+                              ? faHeartSolid
+                              : faHeart
+                          }
+                          className="heart"
+                          style={{
+                            color: bookmarkedRecipes.find(
+                              (r) => r.id === recipe.id
+                            )
+                              ? "red"
+                              : "gray",
+                            cursor: "pointer",
+                          }}
+                          onClick={() => handleBookmark(recipe)}
+                        />
+                      </button> */}
                     </section>
                   </section>
                 </section>
