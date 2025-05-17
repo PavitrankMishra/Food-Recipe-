@@ -100,15 +100,15 @@ const Recipes = ({ data, recipe, getData, getId }) => {
             <FontAwesomeIcon icon={faPlus} className="plus" />
             <FontAwesomeIcon icon={faBookmark} className="bookmark" />
             <p className="addHeading">Add Recipe</p>
-            <section style={{ position: "relative" }}>
+            <section className="bookmarkWrapper">
               <p className="bookmarkHeading">Bookmark</p>
-              <section className="bookmarksSection ">
+              <section className="bookmarksSection">
                 <section className="bookmarkedVisible">
                   {bookMarkedRecipes.length > 0 ? (
                     bookMarkedRecipes.map((item) => (
                       <section key={item.id} className="content">
                         <section className="imgDiv">
-                          <img src={item.image_url} />
+                          <img src={item.image_url} alt={item.title} />
                         </section>
                         <section>
                           <p>{item.title}</p>
@@ -217,26 +217,6 @@ const Recipes = ({ data, recipe, getData, getId }) => {
                           className="heart"
                         />
                       </button>
-
-                      {/* <button onClick={handleBookmark}>
-                        <FontAwesomeIcon
-                          icon={
-                            bookmarkedRecipes.find((r) => r.id === recipe.id)
-                              ? faHeartSolid
-                              : faHeart
-                          }
-                          className="heart"
-                          style={{
-                            color: bookmarkedRecipes.find(
-                              (r) => r.id === recipe.id
-                            )
-                              ? "red"
-                              : "gray",
-                            cursor: "pointer",
-                          }}
-                          onClick={() => handleBookmark(recipe)}
-                        />
-                      </button> */}
                     </section>
                   </section>
                 </section>
