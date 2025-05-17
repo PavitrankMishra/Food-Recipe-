@@ -89,7 +89,6 @@ const Recipes = ({ data, recipe, getData, getId }) => {
       <Header />
       {/* The main container that contains all the sub parts */}
       <section className="recipeContainer">
-
         {/* The container that contains recipe heading */}
         <section className="recipeHeadingContainer">
           <section className="containerLeft">
@@ -102,7 +101,9 @@ const Recipes = ({ data, recipe, getData, getId }) => {
             />
           </section>
           <section className="containerRight">
-            <FontAwesomeIcon icon={faPlus} className="plus" />
+            <button>
+              <FontAwesomeIcon icon={faPlus} className="plus" />
+            </button>
             <button onClick={handleVisibility}>
               <FontAwesomeIcon icon={faBookmark} className="bookmark" />
             </button>
