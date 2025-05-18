@@ -18,6 +18,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { faHeart as faHeartSolid } from "@fortawesome/free-solid-svg-icons";
+import Bookmark from "./Bookmark";
 
 const Recipes = ({ data, recipe, getData, getId }) => {
   const [resPerPage, setResPerPage] = useState(10);
@@ -110,7 +111,11 @@ const Recipes = ({ data, recipe, getData, getId }) => {
             <p className="addHeading">Add Recipe</p>
             <section className="bookmarkWrapper">
               <p className="bookmarkHeading">Bookmark</p>
-              <section
+              <Bookmark
+                isVisible={isVisible}
+                bookMarkedRecipes={bookMarkedRecipes}
+              />
+              {/* <section
                 className={`bookmarksSection ${isVisible ? "visibility" : ""}`}
               >
                 <section className="bookmarkedVisible">
@@ -130,7 +135,7 @@ const Recipes = ({ data, recipe, getData, getId }) => {
                     <p>No bookmarks yet</p>
                   )}
                 </section>
-              </section>
+              </section> */}
             </section>
           </section>
         </section>

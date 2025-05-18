@@ -1,0 +1,80 @@
+.bookmarksSection {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  width: 250px;
+  z-index: 9999;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.bookmarkWrapper {
+  /* position: relative; */
+}
+
+.containerRight:hover .bookmarksSection,
+.bookmarksSection.visibility {
+  display: block;
+}
+
+.bookmarkWrapper:hover .bookmarksSection {
+  display: block;
+}
+
+.bookmarkedVisible {
+  position: absolute;
+  /* right: 10px; */
+  width: 260px;
+  background-color: #e0e0df;
+  padding: 20px;
+  border-radius: 10px;
+  /* bottom: 50px; */
+}
+
+.bookmarkedVisible p {
+  font-size: 12px;
+}
+
+.bookmarkedVisible .content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.bookmarkedVisible .imgDiv {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.bookmarkedVisible .imgDiv img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media screen and (max-width: 500px) {
+  .bookmarksSection {
+    top: 21%;
+  }
+
+  .bookmarkedVisible {
+    padding: 0;
+  }
+
+  .bookmarkedVisible p {
+    font-size: 9px;
+  }
+
+  .bookmarkedVisible .content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+    margin: 10px 4px;
+  }
+}
