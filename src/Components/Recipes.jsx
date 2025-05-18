@@ -233,7 +233,6 @@ const Recipes = ({ data, recipe, getData, getId }) => {
                     </section>
                   </section>
                 </section>
-
                 <section className="sec-3">
                   <h2>Recipe Ingredients</h2>
                   {updatedIngredients.length > 0 ? (

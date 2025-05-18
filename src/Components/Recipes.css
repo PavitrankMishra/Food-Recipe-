@@ -237,8 +237,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 1.25vw;
-  padding: 30px 40px;
+  font-size: 20px;
+  padding: 30px 0px;
+  padding-bottom: 20px;
 }
 
 .recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-2 .secInner,
@@ -291,16 +292,17 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding-bottom: 20px;
 }
 
 .recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-3 h2 {
-  padding-bottom: 30px;
+  padding-bottom: 15px;
   font-weight: 400;
 }
 
 .recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-3 .check {
   color: #ec795c;
-  font-size: 24px;
+  font-size: 20px;
   padding: 0;
   padding-right: 17px;
 }
@@ -312,10 +314,10 @@
   .listContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2.5rem 3rem;
+  gap: 1.5rem 3rem;
   list-style: none;
-  padding-top: 10px;
-  padding-bottom: 30px;
+  /* padding-top: 10px; */
+  /* padding-bottom: 30px; */
 }
 
 .recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-3 ul li {
@@ -385,9 +387,9 @@
 .recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-4 button {
   background-color: transparent;
   border: none;
-  font-size: 1.5vw;
+  font-size: 1.1vw;
   color: #ec795c;
-  margin: 20px 0;
+  margin: 10px 0;
   outline: none;
   cursor: pointer;
   position: relative;
@@ -420,10 +422,10 @@
 }
 
 .recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-4 h1 {
-  font-size: 2vw;
-  margin: 10px 0;
+  font-size: 18px;
+  margin: 5px 0;
   /* transform: rotate(-5deg); */
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .bookmarkButton {
