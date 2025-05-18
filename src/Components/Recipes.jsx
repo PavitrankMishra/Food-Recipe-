@@ -244,8 +244,11 @@ const Recipes = ({ data, recipe, getData, getId }) => {
                             icon={faCircleCheck}
                             className="check"
                           />
-                          <p>{`${ig.quantity || ""}`}</p>
-                          <p>&nbsp;{`${ig.unit} ${ig.description}`}</p>
+                          <p>
+                            {`${ig.quantity || ""}`} {`${ig.unit}`}{" "}
+                            {`${ig.description}`}
+                          </p>
+                          <p>{` `}</p>
                         </li>
                       ))}
                     </ul>

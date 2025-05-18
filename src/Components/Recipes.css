@@ -301,7 +301,8 @@
 .recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-3 .check {
   color: #ec795c;
   font-size: 24px;
-  padding: 0 20px;
+  padding: 0;
+  padding-right: 17px;
 }
 
 .recipeContainer
@@ -319,6 +320,7 @@
 
 .recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-3 ul li {
   display: flex;
+  align-items: center;
 }
 
 .recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-3 .addToCart {
@@ -544,8 +546,7 @@
   .recipeContainer .recipeHeadingContainer {
     overflow: hidden;
     gap: 10px;
-    /* padding: 10px 5px; */
-    /* width: auto; */
+    width: 95%;
   }
 
   .recipeContainer .recipeHeadingContainer .containerLeft img {
@@ -554,6 +555,9 @@
 
   .recipeContainer .recipeHeadingContainer .containerLeft input {
     padding-left: 5px;
+    width: 65vw;
+    font-size: 3.25vw;
+    color: #757578;
   }
 
   .recipeContainer .recipeHeadingContainer .containerRight .addHeading,
@@ -566,15 +570,6 @@
     color: #ec795c;
   }
 
-  .recipeContainer .recipeHeadingContainer .containerLeft input {
-    width: 58vw;
-    font-size: 3.25vw;
-  }
-
-  .recipeContainer .recipeHeadingContainer .containerLeft input {
-    color: #757578;
-  }
-
   .recipeContainer .recipeMiddleContainer {
     flex-direction: column;
   }
@@ -584,8 +579,7 @@
   }
 
   .recipeContainer .recipeMiddleContainer .recipeMiddleLeft {
-    width: 100%;
-    /* padding: 20px 0px; */
+    width: 98%;
   }
 
   .recipeContainer
@@ -614,7 +608,7 @@
     .recipeMiddleLeft
     .recipeSection
     .userSection {
-    width: 18px;
+    width: 22px;
     height: 22px;
   }
 
@@ -623,7 +617,7 @@
   }
 
   .recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-2 {
-    padding: 20px 0px;
+    padding: 10px 0px;
   }
 
   .recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-2 .secInner,
@@ -632,17 +626,11 @@
   }
 
   .recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-2 .secInner {
-    gap: 8px;
-  }
-
-  .recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-2 .secInner,
-  .clockContainer,
-  .userContainer {
-    gap: 7px;
+    gap: 10vw;
   }
 
   .recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-3 h2 {
-    padding-bottom: 15px;
+    padding-bottom: 5px;
     font-size: 5vw;
   }
 
@@ -656,8 +644,10 @@
   }
 
   .recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-3 .check {
-    padding: 2px 8px;
+    padding: 0;
     font-size: 13px;
+    padding-right: 13px;
+    font-size: 4vw;
   }
 
   .recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-3 .addToCart {
@@ -676,29 +666,7 @@
   .recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-4 button {
     font-size: 10px;
   }
-
-  /* .bookmarkWrapper {
-    position: relative;
-  } */
-
-  /* .bookmarksSection {
-    top: 21%;
+  .recipeContainer .recipeHeadingContainer .containerLeft {
+    gap: 22px;
   }
-
-  .bookmarkedVisible {
-    padding: 0;
-    width: 180px;
-  }
-
-  .bookmarkedVisible p {
-    font-size: 9px;
-  }
-
-  .bookmarkedVisible .content {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 4px;
-    margin: 10px 4px;
-  } */
 }
