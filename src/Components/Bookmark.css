@@ -1,4 +1,27 @@
 .bookmarksSection {
+  position: absolute;
+  right: 10px;
+  background: aqua;
+  height: 200px;
+}
+
+/* .bookmarksSection {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  width: 250px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.bookmarksSection .bookmarkedVisible {
+  width: 260px;
+  height: 500px;
+  background-color: aqua;
+  border: 2px solid red;
+} */
+
+/* .bookmarksSection {
   display: none;
   position: absolute;
   right: 0;
@@ -7,31 +30,53 @@
   z-index: 9999;
   padding: 10px;
   border-radius: 8px;
-}
+} */
 
 .bookmarkWrapper {
   /* position: relative; */
 }
 
-.containerRight:hover .bookmarksSection,
+/* .containerRight:hover .bookmarksSection,
 .bookmarksSection.visibility {
   display: block;
-}
+} */
 
-.bookmarkWrapper:hover .bookmarksSection {
+/* .bookmarkWrapper:hover .bookmarksSection {
   display: block;
+} */
+
+/* .bookmarksSection:hover {
+  display: block;
+} */
+
+.recipeContainer
+  .recipeHeadingContainer
+  .containerRight
+  .bookmarkWrapper
+  .bookmarksSection.novisibility {
+  display: none;
 }
 
 .bookmarkedVisible {
   position: absolute;
-  /* right: 10px; */
+  right: 180px;
   width: 260px;
   background-color: #e0e0df;
   padding: 20px;
   border-radius: 10px;
-  /* bottom: 50px; */
+  top: 10px;
+  display: flex;
+  align-items: self-start;
+  justify-content: space-between;
 }
 
+.bookrecipeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 20px;
+}
 .bookmarkedVisible p {
   font-size: 12px;
 }
@@ -57,13 +102,20 @@
   display: block;
 }
 
+.novisibility {
+  display: none;
+}
+
+.visibility {
+  display: block;
+}
 @media screen and (max-width: 500px) {
   .bookmarksSection {
-    top: 21%;
+    /* top: 21%; */
   }
 
   .bookmarkedVisible {
-    padding: 0;
+    right: 0;
   }
 
   .bookmarkedVisible p {

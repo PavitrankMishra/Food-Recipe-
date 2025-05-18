@@ -281,6 +281,8 @@
   border: none;
 }
 
+
+
 /* *************************************************** Section 3 of Middle Right Container ****************************************** */
 .recipeContainer .recipeMiddleContainer .recipeMiddleRight .sec-3 {
   display: flex;
@@ -419,6 +421,11 @@
   /* transform: rotate(-5deg); */
   font-weight: 300;
 }
+
+  .bookmarkButton {
+    position: relative;
+  }
+
 
 @media screen and (max-width: 1000px) {
   .recipeContainer {
@@ -669,9 +676,11 @@
     font-size: 10px;
   }
 
-  .bookmarkWrapper {
-    position: static;
-  }
+
+  
+  /* .bookmarkWrapper {
+    position: relative;
+  } */
 
   /* .bookmarksSection {
     top: 21%;
