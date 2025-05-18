@@ -19,6 +19,7 @@ import {
 import { Link } from "react-router-dom";
 import { faHeart as faHeartSolid } from "@fortawesome/free-solid-svg-icons";
 import Bookmark from "./Bookmark";
+import AddRecipe from "./AddRecipe";
 
 const Recipes = ({ data, recipe, getData, getId }) => {
   const [resPerPage, setResPerPage] = useState(10);
@@ -85,6 +86,11 @@ const Recipes = ({ data, recipe, getData, getId }) => {
     console.log(isVisible);
   };
 
+  const [isRecipeVisible, setIsRecipeVisible] = useState(false);
+  const handleAddRecipeVisibility = () => {
+    setIsRecipeVisible((prev) => !prev);
+    console.log("Is the add recipe visible: " + isRecipeVisible);
+  };
   return (
     <>
       <Header />
@@ -102,10 +108,18 @@ const Recipes = ({ data, recipe, getData, getId }) => {
             />
           </section>
           <section className="containerRight">
-            <button>
+            <button onClick={handleAddRecipeVisibility}>
               <FontAwesomeIcon icon={faPlus} className="plus" />
             </button>
-            <p className="addHeading">Add Recipe</p>
+            <section className="addRecipeWrapper">
+              <button onClick={handleAddRecipeVisibility}>
+                <p className="addHeading">Add Recipe</p>
+              </button>
+              <AddRecipe
+                isRecipeVisible={isRecipeVisible}
+                setIsRecipeVisible={setIsRecipeVisible}
+              />
+            </section>
             <button onClick={handleVisibility} className="bookmarkButton">
               <FontAwesomeIcon icon={faBookmark} className="bookmark" />
             </button>
@@ -120,27 +134,6 @@ const Recipes = ({ data, recipe, getData, getId }) => {
                 bookMarkedRecipes={bookMarkedRecipes}
                 setIsVisible={setIsVisible}
               />
-              {/* <section
-                className={`bookmarksSection ${isVisible ? "visibility" : ""}`}
-              >
-                <section className="bookmarkedVisible">
-                  {bookMarkedRecipes.length > 0 ? (
-                    bookMarkedRecipes.map((item) => (
-                      <section key={item.id} className="content">
-                        <section className="imgDiv">
-                          <img src={item.image_url} alt={item.title} />
-                        </section>
-                        <section>
-                          <p>{item.title}</p>
-                          <p>{item.publisher}</p>
-                        </section>
-                      </section>
-                    ))
-                  ) : (
-                    <p>No bookmarks yet</p>
-                  )}
-                </section>
-              </section> */}
             </section>
           </section>
         </section>

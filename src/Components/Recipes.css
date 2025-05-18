@@ -6,6 +6,7 @@
   margin: 20px auto;
   border-radius: 5px;
   flex-direction: column;
+
 }
 
 .recipeContainer .recipeHeadingContainer {
@@ -86,6 +87,7 @@
   width: 90%;
   margin: 20px 0;
   gap: 20px;
+
 }
 
 /* ************************************************** Left Middle Container below the recipeHeading Container ***************************** */

@@ -7,9 +7,15 @@
   max-width: 1000px;
   margin: 100px auto 50px;
   padding: 30px;
-  background-color: #fff8f4;
+  background-color: rgba(255, 248, 244, 0.7); /* with transparency */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   flex-wrap: wrap;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
 }
 
 .addRecipeContainer {
@@ -24,6 +30,12 @@
   justify-content: space-between;
   gap: 20px;
   flex-wrap: wrap;
+}
+
+.one {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .addRecipeLeft,
@@ -97,6 +109,13 @@
   flex-wrap: wrap;
 }
 
+.recipeContainer
+  .recipeHeadingContainer
+  .containerRight
+  .addRecipeWrapper
+  .addMainContainer.novisibility {
+  display: none;
+}
 /* Responsive Design */
 @media screen and (max-width: 768px) {
   .addRecipe1 {
