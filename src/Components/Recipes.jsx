@@ -105,15 +105,20 @@ const Recipes = ({ data, recipe, getData, getId }) => {
             <button>
               <FontAwesomeIcon icon={faPlus} className="plus" />
             </button>
-            <button onClick={handleVisibility}>
+            <p className="addHeading">Add Recipe</p>
+            <button onClick={handleVisibility} className="bookmarkButton">
               <FontAwesomeIcon icon={faBookmark} className="bookmark" />
             </button>
-            <p className="addHeading">Add Recipe</p>
             <section className="bookmarkWrapper">
-              <p className="bookmarkHeading">Bookmark</p>
+              <button>
+                <p className="bookmarkHeading" onClick={handleVisibility}>
+                  Bookmark
+                </p>
+              </button>
               <Bookmark
                 isVisible={isVisible}
                 bookMarkedRecipes={bookMarkedRecipes}
+                setIsVisible={setIsVisible}
               />
               {/* <section
                 className={`bookmarksSection ${isVisible ? "visibility" : ""}`}
