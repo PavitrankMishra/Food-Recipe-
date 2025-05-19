@@ -4,15 +4,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Carter+One&family=Chewy&family=Cinzel+Decorative&family=Cormorant+Garamond&family=Fredoka:wght@400;600&family=Merriweather&family=Montserrat:wght@400;600&family=Nunito:wght@400;600&family=Pacifico&family=Playfair+Display:wght@400;600&family=Poppins:wght@400;600;800&family=Quicksand:wght@400;600&family=Raleway:wght@400;600&display=swap');
 
 .headerContainer {
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   color: #333;
-  padding: 20px 10px;
+  padding: 20px 0;
   /* border:2px solid red; */
   background-color: #f7e2dd;
   box-shadow: 0px 0px 70px #f87e5f;
   text-transform: uppercase;
+  width:100%;
 }
 
 .headerContainer .headerLeft {

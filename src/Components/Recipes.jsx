@@ -93,118 +93,119 @@ const Recipes = ({ data, recipe, getData, getId }) => {
   };
   return (
     <>
-      <Header />
-      {/* The main container that contains all the sub parts */}
-      <section className="recipeContainer">
-        {/* The container that contains recipe heading */}
-        <section className="recipeHeadingContainer">
-          <section className="containerLeft">
-            <img src={Logo} className="headingLogo" alt="logo" />
-            <input
-              type="text"
-              placeholder="Search over 1,000,000 recipes"
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-            />
-          </section>
-          <section className="containerRight">
-            <button onClick={handleAddRecipeVisibility}>
-              <FontAwesomeIcon icon={faPlus} className="plus" />
-            </button>
-            <section className="addRecipeWrapper">
+      <section className="mostMainContainer">
+        <Header />
+        {/* The main container that contains all the sub parts */}
+        <section className="recipeContainer">
+          {/* The container that contains recipe heading */}
+          <section className="recipeHeadingContainer">
+            <section className="containerLeft">
+              <img src={Logo} className="headingLogo" alt="logo" />
+              <input
+                type="text"
+                placeholder="Search over 1,000,000 recipes"
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+              />
+            </section>
+            <section className="containerRight">
               <button onClick={handleAddRecipeVisibility}>
-                <p className="addHeading">Add Recipe</p>
+                <FontAwesomeIcon icon={faPlus} className="plus" />
               </button>
-              <AddRecipe
-                isRecipeVisible={isRecipeVisible}
-                setIsRecipeVisible={setIsRecipeVisible}
-              />
-            </section>
-            <button onClick={handleVisibility} className="bookmarkButton">
-              <FontAwesomeIcon icon={faBookmark} className="bookmark" />
-            </button>
-            <section className="bookmarkWrapper">
-              <button>
-                <p className="bookmarkHeading" onClick={handleVisibility}>
-                  Bookmark
-                </p>
+              <section className="addRecipeWrapper">
+                <button onClick={handleAddRecipeVisibility}>
+                  <p className="addHeading">Add Recipe</p>
+                </button>
+                <AddRecipe
+                  isRecipeVisible={isRecipeVisible}
+                  setIsRecipeVisible={setIsRecipeVisible}
+                />
+              </section>
+              <button onClick={handleVisibility} className="bookmarkButton">
+                <FontAwesomeIcon icon={faBookmark} className="bookmark" />
               </button>
-              <Bookmark
-                isVisible={isVisible}
-                bookMarkedRecipes={bookMarkedRecipes}
-                setIsVisible={setIsVisible}
-              />
+              <section className="bookmarkWrapper">
+                <button>
+                  <p className="bookmarkHeading" onClick={handleVisibility}>
+                    Bookmark
+                  </p>
+                </button>
+                <Bookmark
+                  isVisible={isVisible}
+                  bookMarkedRecipes={bookMarkedRecipes}
+                  setIsVisible={setIsVisible}
+                />
+              </section>
             </section>
           </section>
-        </section>
 
-        {/* Main content */}
-        <section className="recipeMiddleContainer">
-          {/* Left Side: List of Recipes */}
-          <section className="recipeMiddleLeft">
-            {currentData && currentData.length > 0 ? (
-              currentData.map((item) => (
-                <section
-                  className="recipeSection"
-                  key={item.id}
-                  onClick={() => sendID(item.id)}
+          {/* Main content */}
+          <section className="recipeMiddleContainer">
+            {/* Left Side: List of Recipes */}
+            <section className="recipeMiddleLeft">
+              {currentData && currentData.length > 0 ? (
+                currentData.map((item) => (
+                  <section
+                    className="recipeSection"
+                    key={item.id}
+                    onClick={() => sendID(item.id)}
+                  >
+                    <section className="recipe1">
+                      <section className="recipeImage">
+                        <img src={item.image_url} alt={item.title} />
+                      </section>
+                      <section className="recipeInner">
+                        <p id="itemName">{item.title}</p>
+                        <p id="personName">{item.publisher}</p>
+                      </section>
+                    </section>
+                    <section className="userSection">
+                      <FontAwesomeIcon icon={faUser} />
+                    </section>
+                  </section>
+                ))
+              ) : (
+                <p>There is no data</p>
+              )}
+
+              {/* Pagination */}
+              <section className="buttonContainer">
+                <button
+                  className="butonLeft"
+                  onClick={handlePreviousList}
+                  disabled={page === 1}
                 >
-                  <section className="recipe1">
-                    <section className="recipeImage">
-                      <img src={item.image_url} alt={item.title} />
-                    </section>
-                    <section className="recipeInner">
-                      <p id="itemName">{item.title}</p>
-                      <p id="personName">{item.publisher}</p>
-                    </section>
-                  </section>
-                  <section className="userSection">
-                    <FontAwesomeIcon icon={faUser} />
-                  </section>
-                </section>
-              ))
-            ) : (
-              <p>There is no data</p>
-            )}
-
-            {/* Pagination */}
-            <section className="buttonContainer">
-              <button
-                className="butonLeft"
-                onClick={handlePreviousList}
-                disabled={page === 1}
-              >
-                Prev
-              </button>
-              <button
-                className="buttonRight"
-                onClick={handleNextList}
-                disabled={page >= Math.ceil(data?.length / resPerPage)}
-              >
-                Next
-              </button>
+                  Prev
+                </button>
+                <button
+                  className="buttonRight"
+                  onClick={handleNextList}
+                  disabled={page >= Math.ceil(data?.length / resPerPage)}
+                >
+                  Next
+                </button>
+              </section>
             </section>
-          </section>
 
-          {/* Right Side: Selected Recipe Details */}
-          <section className="recipeMiddleRight">
-            {recipe ? (
-              <>
-                <section className="sec-1">
-                  <img src={recipe.image_url} alt={recipe.title} />
-                  <p>{recipe.title}</p>
-                </section>
+            {/* Right Side: Selected Recipe Details */}
+            <section className="recipeMiddleRight">
+              {recipe ? (
+                <>
+                  <section className="sec-1">
+                    <img src={recipe.image_url} alt={recipe.title} />
+                    <p>{recipe.title}</p>
+                  </section>
 
-                <section className="sec-2">
-                  <section className="secInner">
+                  <section className="sec-2">
                     <section className="clockContainer">
                       <FontAwesomeIcon icon={faClock} className="clock" />
                       <p>{recipe.cooking_time} minutes</p>
                     </section>
-
                     <section className="userContainer">
                       <FontAwesomeIcon icon={faUser} className="user" />
                       <p>{servings} Servings</p>
+                    </section>
+                    <section className="actions">
                       <FontAwesomeIcon
                         icon={faMinus}
                         className="minus"
@@ -216,9 +217,7 @@ const Recipes = ({ data, recipe, getData, getId }) => {
                         onClick={incrementCount}
                       />
                     </section>
-                  </section>
 
-                  <section className="secOuter">
                     <section className="likeContainer">
                       <button onClick={() => handleBookMark(recipe)}>
                         <FontAwesomeIcon
@@ -232,51 +231,51 @@ const Recipes = ({ data, recipe, getData, getId }) => {
                       </button>
                     </section>
                   </section>
-                </section>
-                <section className="sec-3">
-                  <h2>Recipe Ingredients</h2>
-                  {updatedIngredients.length > 0 ? (
-                    <ul className="listContainer">
-                      {updatedIngredients.map((ig, index) => (
-                        <li key={index}>
-                          <FontAwesomeIcon
-                            icon={faCircleCheck}
-                            className="check"
-                          />
-                          <p>
-                            {`${ig.quantity || ""}`} {`${ig.unit}`}{" "}
-                            {`${ig.description}`}
-                          </p>
-                          <p>{` `}</p>
-                        </li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p>There are no ingredients listed.</p>
-                  )}
-                  {/* <button className="addToCart">
+                  <section className="sec-3">
+                    <h2>Recipe Ingredients</h2>
+                    {updatedIngredients.length > 0 ? (
+                      <ul className="listContainer">
+                        {updatedIngredients.map((ig, index) => (
+                          <li key={index}>
+                            <FontAwesomeIcon
+                              icon={faCircleCheck}
+                              className="check"
+                            />
+                            <p>
+                              {`${ig.quantity || ""}`} {`${ig.unit}`}{" "}
+                              {`${ig.description}`}
+                            </p>
+                            <p>{` `}</p>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p>There are no ingredients listed.</p>
+                    )}
+                    {/* <button className="addToCart">
                     <FontAwesomeIcon icon={faCartShopping} /> ADD TO SHOPPING
                     LIST
                   </button> */}
-                </section>
+                  </section>
 
-                <section className="sec-4">
-                  <h1>HOW TO COOK IT</h1>
-                  <p>
-                    The recipe was carefully designed and tested by{" "}
-                    <strong>{recipe.publisher}</strong>.
-                  </p>
-                  <p>Please check out directions at their website.</p>
-                  <Link to={recipe.source_url} target="_blank">
-                    <button className="directions">
-                      DIRECTIONS <FontAwesomeIcon icon={faArrowRightLong} />
-                    </button>
-                  </Link>
-                </section>
-              </>
-            ) : (
-              <p>Select a recipe to view details</p>
-            )}
+                  <section className="sec-4">
+                    <h1>HOW TO COOK IT</h1>
+                    <p>The recipe was carefully designed and tested by </p>
+                    <p>
+                      <strong>{recipe.publisher}</strong>.
+                    </p>
+                    <p>Please check out directions at their website.</p>
+                    <Link to={recipe.source_url} target="_blank">
+                      <button className="directions">
+                        DIRECTIONS <FontAwesomeIcon icon={faArrowRightLong} />
+                      </button>
+                    </Link>
+                  </section>
+                </>
+              ) : (
+                <p>Select a recipe to view details</p>
+              )}
+            </section>
           </section>
         </section>
       </section>
