@@ -99,15 +99,15 @@ const Recipes = ({ data, recipe, getData, getId }) => {
         <section className="recipeContainer">
           {/* The container that contains recipe heading */}
           <section className="recipeHeadingContainer">
-            <section className="containerLeft">
-              <img src={Logo} className="headingLogo" alt="logo" />
-              <input
-                type="text"
-                placeholder="Search over 1,000,000 recipes"
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-              />
-            </section>
+            {/* <section className="containerLeft"> */}
+            <img src={Logo} className="headingLogo" alt="logo" />
+            <input
+              type="text"
+              placeholder="Search over 1,000,000 recipes"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+            />
+            {/* </section> */}
             <section className="containerRight">
               <button onClick={handleAddRecipeVisibility}>
                 <FontAwesomeIcon icon={faPlus} className="plus" />
@@ -204,18 +204,18 @@ const Recipes = ({ data, recipe, getData, getId }) => {
                     <section className="userContainer">
                       <FontAwesomeIcon icon={faUser} className="user" />
                       <p>{servings} Servings</p>
-                    </section>
-                    <section className="actions">
-                      <FontAwesomeIcon
-                        icon={faMinus}
-                        className="minus"
-                        onClick={decrementCount}
-                      />
-                      <FontAwesomeIcon
-                        icon={faPlus}
-                        className="plus"
-                        onClick={incrementCount}
-                      />
+                      <section className="actions">
+                        <FontAwesomeIcon
+                          icon={faMinus}
+                          className="minus"
+                          onClick={decrementCount}
+                        />
+                        <FontAwesomeIcon
+                          icon={faPlus}
+                          className="plus"
+                          onClick={incrementCount}
+                        />
+                      </section>
                     </section>
 
                     <section className="likeContainer">
@@ -265,8 +265,9 @@ const Recipes = ({ data, recipe, getData, getId }) => {
                       <strong>{recipe.publisher}</strong>.
                     </p>
                     <p>Please check out directions at their website.</p>
+
                     <Link to={recipe.source_url} target="_blank">
-                      <button className="directions">
+                      <button>
                         DIRECTIONS <FontAwesomeIcon icon={faArrowRightLong} />
                       </button>
                     </Link>
