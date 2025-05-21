@@ -41,6 +41,12 @@
   font-weight: 600;
 }
 
+.aboutContainer .left1 .special {
+  font-size: 30px;
+  font-weight: 600;
+  color:#6f0909;
+}
+
 .aboutContainer .left1 .para {
   margin-top: 20px;
   letter-spacing: 1.3px;

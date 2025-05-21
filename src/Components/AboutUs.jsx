@@ -2,6 +2,7 @@ import React from "react";
 import "../Components/AboutUs.css";
 import vegPizza from "../Assets/vegPizza.jpg";
 import { Link } from "react-router-dom";
+import Typewriter from "typewriter-effect";
 
 const AboutUs = () => {
   return (
@@ -9,7 +10,18 @@ const AboutUs = () => {
       <section className="aboutContainer">
         <section className="left1">
           <h1>About Us</h1>
-          <p>Discover the authentic flavors of chinese cuisine foods.</p>
+          <p>Discover the authentic flavors of</p>
+          <section className="special">
+            <Typewriter
+              options={{
+                strings: ["Chinese", "Italian", "Spanish"],
+                autoStart: true,
+                loop: true,
+                cursor: "",
+              }}
+            />{" "}
+          </section>
+          <p>cuisine foods.</p>
           <section className="para">
             <span>
               Experience the rich and diverse flavors of Chinese cuisine, where
