@@ -10,7 +10,9 @@ const Header = () => {
     <>
       <section className="headerContainer">
         <section className="logoContainer">
-          <img src={Logo} alt="Company logo" />
+          <Link to="/">
+            <img src={Logo} alt="Company logo" />
+          </Link>
         </section>
         <section className="listContainer">
           <ul>
