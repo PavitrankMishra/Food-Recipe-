@@ -80,6 +80,9 @@ const App = () => {
             />
           }
         />
+        <Route path="/about" element={<Home />} />
+        <Route path="/bookmarks" element={<Home />} />
+
         {/* <Route path="/recipes" element={<AddRecipe />} /> */}
         <Route path="*" element={<NotFound />} />
       </Routes>

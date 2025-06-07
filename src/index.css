@@ -4,10 +4,11 @@
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
 }
 
 :root {
-  background-color: rgb(224, 224, 223);
+  /* background-color: rgb(224, 224, 223); */
   overflow-x: hidden;
 }
 /* :root {
