@@ -15,11 +15,11 @@ const Home = () => {
   return (
     <>
       <Header />
-      <section className="heroSection">
-        {/* <p>Tasty</p>
+      {/* <section className="heroSection">
+        <p>Tasty</p>
           <p>Food</p>
           <p>Recipes</p>
-          <span>Guaranteed</span> */}
+          <span>Guaranteed</span>
         <section className="headingContainer">
           <h1>Tried</h1> <h1>Tasted</h1> <h1>Trusted</h1>{" "}
         </section>
@@ -73,10 +73,10 @@ const Home = () => {
             <img src={Noodles} />
           </section>
         </section>
-      </section>
-      <AboutUs />
-      <Banner />
-      <Working />
+      </section> */}
+      {/* <AboutUs /> */}
+      {/* <Banner /> */}
+      {/* <Working /> */}
     </>
   );
 };

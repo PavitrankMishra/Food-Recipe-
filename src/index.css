@@ -9,7 +9,14 @@
 
 :root {
   /* background-color: rgb(224, 224, 223); */
+  /* overflow-x: hidden; */
+  /* background-color: red; */
+}
+
+html, body {
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;

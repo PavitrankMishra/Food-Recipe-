@@ -1,10 +1,21 @@
 import React from "react";
 import "./Header.css";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 import Logo from "../Assets/Logo.png";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SideBar from "../Components/SideBar";
+import { useState } from "react";
 
 const Header = () => {
   const location = useLocation();
+
+  const [showSideBar, setShowSideBar] = useState(false);
+
+  function toggleSideBar() {
+    setShowSideBar(!showSideBar);
+    // console.log(showSideBar);
+  }
 
   return (
     <>
@@ -13,6 +24,12 @@ const Header = () => {
           <Link to="/">
             <img src={Logo} alt="Company logo" />
           </Link>
+          <h1 className="mealzoHeading">MEALZO</h1>
+          <FontAwesomeIcon
+            icon={faBars}
+            className="burgerMenu"
+            onClick={toggleSideBar}
+          />
         </section>
         <section className="listContainer">
           <ul>
@@ -34,26 +51,7 @@ const Header = () => {
           <button className="loginButton">Login</button>
         </section>
       </section>
-      {/* <section className="headerContainer">
-        <section className="headerLeft">
-          <img src={Logo} alt="Logo" />
-          <h1>MEALZO</h1>
-          <h1 class="logo">
-            <span class="logo-main">Delicious</span>
-            <span class="logo-sub">Bowl</span>
-          </h1>
-        </section>
-        <section className="headerRight">
-          <section className="rightPart">
-            <Link to="/recipes">
-              <span>Search Recipes</span>
-            </Link>
-            <Link to="/addrecipe">
-              <span>Add Recipes</span>
-            </Link>
-          </section>
-        </section>
-      </section> */}
+      <SideBar show={showSideBar} onClose={toggleSideBar} />
     </>
   );
 };
