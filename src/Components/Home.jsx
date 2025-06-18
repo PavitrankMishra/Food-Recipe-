@@ -10,11 +10,13 @@ import Cake from "../Assets/cake.webp";
 import AboutUs from "./AboutUs";
 import Banner from "./Banner";
 import Working from "./Working";
+import Hero from "./Hero";
 
 const Home = () => {
   return (
     <>
       <Header />
+      <Hero />
       {/* <section className="heroSection">
         <p>Tasty</p>
           <p>Food</p>
