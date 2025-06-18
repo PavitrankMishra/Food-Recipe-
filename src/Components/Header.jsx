@@ -6,6 +6,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SideBar from "../Components/SideBar";
 import { useState } from "react";
+import Button from "./Button";
 
 const Header = () => {
   const location = useLocation();
@@ -48,7 +49,7 @@ const Header = () => {
           </ul>
         </section>
         <section className="loginContainer">
-          <button className="loginButton">Login</button>
+          <Button location={"/login"}>Login</Button>
         </section>
       </section>
       <SideBar show={showSideBar} onClose={toggleSideBar} />

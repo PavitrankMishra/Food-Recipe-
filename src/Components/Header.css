@@ -72,35 +72,6 @@
   width: 100%;
 }
 
-.headerContainer .loginContainer button {
-  background-color: transparent;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  border: 2px solid #fd6b47;
-  border-radius: 5px;
-  width: 80px;
-  height: 35px;
-  transition: all 0.5s ease-in-out;
-  font-weight: 600;
-  /* border: 2px solid #333; */
-  color: #fd6b47;
-}
-
-.headerContainer .loginContainer button:hover {
-  background-color: #fd6b47;
-  border: 2px solid #333;
-  color: #333;
-}
-
-/* .headerContainer .headerLeft {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  border:2px solid red;
-  justify-content: center;
-} */
-
 .headerContainer .headerLeft h1 {
   /* border:2px solid red; */
   /* display: inline; */
@@ -130,33 +101,6 @@
   font-family: 'Pacifico', cursive; */
 }
 
-/* .logo-main {
-  font-family: "Bebas Neue", cursive;
-  color: #ff4500;
-}
-
-.logo-sub {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  color: #000;
-} */
-
-/* .headerContainer a {
-  text-decoration: none;
-  color: #333;
-}
-
-.headerContainer .headerRight .rightPart {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-} */
-
-/* .sideBarContainer {
-  display: none;
-} */
-
 .headerContainer .logoContainer .mealzoHeading,
 .burgerMenu {
   display: none;
@@ -182,8 +126,6 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    /* margin: auto; */
-    /* border: 2px solid red; */
   }
 
   .headerContainer .logoContainer .mealzoHeading,
@@ -207,20 +149,4 @@
   .headerContainer .logoContainer img {
     width: 9vw;
   }
-
-  /* .headerContainer {
-    position: relative;
-  } */
-
-  /* .sideBarContainer {
-    position: absolute;
-    right: 0px;
-    top: 0;
-    display: block;
-    background-color: #fd6b47;
-    transition: all 2s ease-in-out;
-    width:80%;
-    color: #333;
-    height:100dvh;
-  } */
 }
