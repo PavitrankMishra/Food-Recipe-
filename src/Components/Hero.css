@@ -12,8 +12,8 @@
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
-  padding-left: 20px;
-  gap: 20px;
+  padding-left: 50px;
+  gap: 10px;
 }
 
 .heroContainer .heroLeft h1 {
@@ -28,7 +28,7 @@
 }
 
 .heroContainer .heroLeft p {
-  line-height: 1.7;
+  line-height: 1.4;
   font-size: 2vw;
   font-weight: 400;
   color: dimgray;
@@ -84,6 +84,7 @@ a:active {
 
   .heroContainer .heroLeft {
     gap:10px;
+    padding-left: 20px;
   }
 
   .heroContainer .heroLeft p {
