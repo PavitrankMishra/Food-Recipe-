@@ -3,7 +3,15 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif;
+  font-family: "Inter", sans-serif;
+  font-family: "Nunito", sans-serif;
+  font-family: "Rubik", sans-serif;
+  font-family: "Mulish", sans-serif;
+  font-family: "Raleway", sans-serif;
+  font-family: "Quicksand", sans-serif; */
+  font-family: "Barlow", sans-serif;
+  /* font-family: "Cabin", sans-serif; */
   box-sizing: border-box;
 }
 
@@ -13,7 +21,8 @@
   /* background-color: red; */
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
