@@ -8,7 +8,8 @@ const Hero = () => {
     <>
       <section className="heroContainer">
         <section className="heroLeft">
-          <h1>Recipes with a</h1>
+          <h1>Recipes </h1>
+          <h1>with a</h1>
           <span>Personal Touch</span>
           <p>
             Not just ingredients — share your memories, notes, and twists with
