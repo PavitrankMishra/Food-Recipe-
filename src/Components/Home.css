@@ -21,21 +21,20 @@
   align-items: center;
   justify-content: center;
   gap: 40px;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap; /* ✅ Allow wrapping of cards */
+  align-items: stretch; /* ✅ Make all cards same height */
 }
 
 .categoriesContainer .categoriesSection .card1 {
-  /* width: 90%; */
-  /* max-width: 431px; */
-  /* aspect-ratio: 3 / 4; */
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
-  width: 25vw;
+  width: 400px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
   background-color: #ffffff;
+  flex-wrap: wrap;
 }
 
 .categoriesContainer .categoriesSection .card1 .imgDiv {
@@ -55,13 +54,12 @@
 }
 
 .categoriesContainer .categoriesSection .card1 .cardDescription {
-  width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
   padding: 16px;
+  flex: 1;
   color: #333333;
 }
 
@@ -87,8 +85,12 @@
   font-size: 24px;
 }
 
+.descriptionContainer {
+  flex: 1;
+  margin-bottom: 10px;
+}
 .categoriesContainer .categoriesSection .card1 .cardDescription h1 {
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 100;
   letter-spacing: 1.2px;
   padding-bottom: 12px;
@@ -109,11 +111,11 @@
 }
 
 .categoriesContainer .categoriesSection .card1 .cardDescription p {
-  font-size: 20px;
+  font-size: 16px;
   line-height: 33px;
-  /* border:2px solid red; */
   width: 100%;
 }
+
 /* .heroSection {
   height: 400px;
   display: flex;

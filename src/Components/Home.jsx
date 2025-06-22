@@ -29,14 +29,16 @@ const Home = () => {
             <section className="cardDescription">
               <h1>PIZZA</h1>
               <hr className="horizontalLine" />
-              <p>
-                Crusty base tossed with rich sauce and melting cheese in every
-                bite.
-              </p>
-              <p>A classic treat in every bite!</p>
+              <section className="descriptionContainer">
+                <p>
+                  Crusty base tossed with rich sauce and melting cheese in every
+                  bite.
+                </p>
+                <p>A classic treat in every bite!</p>
+              </section>
               <section className="ratingContainer">
                 <span>5</span>
-                <FontAwesomeIcon icon={faStar} size="lg" color="#red"/>
+                <FontAwesomeIcon icon={faStar} size="lg" color="#red" />
               </section>
             </section>
           </section>
@@ -45,13 +47,15 @@ const Home = () => {
               <img src={Noodles} className="dishImage" alt="imageContainer" />
             </section>
             <section className="cardDescription">
-              <h1>PIZZA</h1>
+              <h1>CHINESE</h1>
               <hr className="horizontalLine" />
-              <p>
-                Noodles, dumplings, and stir-fries bursting with bold chinese
-                flavors.
-              </p>
-              <p>A classic treat in every bite!</p>
+              <section className="descriptionContainer">
+                <p>
+                  Noodles, dumplings, and stir-fries bursting with bold chinese
+                  flavors.
+                </p>
+                <p>A classic treat in every bite!</p>
+              </section>
               <section className="ratingContainer">
                 <span>5</span>
                 <FontAwesomeIcon icon={faStar} size="lg" />
@@ -63,13 +67,15 @@ const Home = () => {
               <img src={Pasta} className="dishImage" alt="imageContainer" />
             </section>
             <section className="cardDescription">
-              <h1>PIZZA</h1>
+              <h1>NOODLES</h1>
               <hr className="horizontalLine" />
-              <p>
-                Crusty base, rich tomato sauce, and gooey cheese for the perfect
-                bite.
-              </p>
-              <p>Pasta that melts in your mouth!</p>
+              <section className="descriptionContainer">
+                <p>
+                  Tender pasta, creamy sauce, and a burst of herbs in every
+                  serve.
+                </p>
+                <p>Pasta that melts in your</p>
+              </section>
               <section className="ratingContainer">
                 <span>5</span>
                 <FontAwesomeIcon icon={faStar} size="lg" />
