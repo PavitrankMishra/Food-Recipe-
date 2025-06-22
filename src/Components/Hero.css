@@ -1,36 +1,36 @@
 .heroContainer {
-  /* height: 88dvh; */
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 50px 0;
+  margin-bottom: 50px;
 }
 
 .heroContainer .heroLeft {
   width: 60%;
-  /* height: 100%; */
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
   padding-left: 50px;
   gap: 10px;
+  order: 2px solid red;
 }
 
 .heroContainer .heroLeft h1 {
   font-size: 120px;
-  font-size: 8vw;
+  font-size: 7vw;
 }
 
 .heroContainer .heroLeft span {
   font-size: 80px;
-  font-size: 7vw;
+  font-size: 6vw;
   color: #fd6b47;
+  -webkit-text-stroke: 0.3vw #000;
 }
 
 .heroContainer .heroLeft p {
   line-height: 1.4;
-  font-size: 2vw;
+  font-size: 1.7vw;
   font-weight: 400;
   color: dimgray;
 }
@@ -76,15 +76,21 @@ a:active {
   }
 
   .heroContainer .heroLeft h1 {
-    font-size: 56px;
+    font-size: 12vw;
   }
 
   .heroContainer .heroLeft span {
-    font-size: 28px;
+    font-size: 10vw;
+    letter-spacing: 0.2px;
+    -webkit-text-stroke: 0.4vw #000;
+    /* font-size: 80px;
+    font-size: 6vw;
+    color: #fd6b47;
+    -webkit-text-stroke: 0.3vw #000; */
   }
 
   .heroContainer .heroLeft {
-    gap:10px;
+    gap: 10px;
     padding-left: 20px;
   }
 
