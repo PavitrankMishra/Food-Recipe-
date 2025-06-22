@@ -8,9 +8,9 @@ const Hero = () => {
     <>
       <section className="heroContainer">
         <section className="heroLeft">
-          <h1>Recipes </h1>
-          <h1>with a</h1>
-          <span>Personal Touch</span>
+          <h1>RECIPES</h1>
+          <h1>WITH A</h1>
+          <span>PERSONAL TOUCH</span>
           <p>
             Not just ingredients — share your memories, notes, and twists with
             every dish. Your kitchen, your story.
