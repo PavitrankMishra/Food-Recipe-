@@ -11,12 +11,73 @@ import AboutUs from "./AboutUs";
 import Banner from "./Banner";
 import Working from "./Working";
 import Hero from "./Hero";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Home = () => {
   return (
     <>
       <Header />
       <Hero />
+      <section className="categoriesContainer">
+        <h1 className="categoriesHeading">TOP CATEGORIES</h1>
+        <section className="categoriesSection">
+          <section className="card1">
+            <section className="imgDiv">
+              <img src={Pizza} className="dishImage" alt="imageContainer" />
+            </section>
+            <section className="cardDescription">
+              <h1>PIZZA</h1>
+              <hr className="horizontalLine" />
+              <p>
+                Crusty base tossed with rich sauce and melting cheese in every
+                bite.
+              </p>
+              <p>A classic treat in every bite!</p>
+              <section className="ratingContainer">
+                <span>5</span>
+                <FontAwesomeIcon icon={faStar} size="lg" color="#red"/>
+              </section>
+            </section>
+          </section>
+          <section className="card1">
+            <section className="imgDiv">
+              <img src={Noodles} className="dishImage" alt="imageContainer" />
+            </section>
+            <section className="cardDescription">
+              <h1>PIZZA</h1>
+              <hr className="horizontalLine" />
+              <p>
+                Noodles, dumplings, and stir-fries bursting with bold chinese
+                flavors.
+              </p>
+              <p>A classic treat in every bite!</p>
+              <section className="ratingContainer">
+                <span>5</span>
+                <FontAwesomeIcon icon={faStar} size="lg" />
+              </section>
+            </section>
+          </section>
+          <section className="card1">
+            <section className="imgDiv">
+              <img src={Pasta} className="dishImage" alt="imageContainer" />
+            </section>
+            <section className="cardDescription">
+              <h1>PIZZA</h1>
+              <hr className="horizontalLine" />
+              <p>
+                Crusty base, rich tomato sauce, and gooey cheese for the perfect
+                bite.
+              </p>
+              <p>Pasta that melts in your mouth!</p>
+              <section className="ratingContainer">
+                <span>5</span>
+                <FontAwesomeIcon icon={faStar} size="lg" />
+              </section>
+            </section>
+          </section>
+        </section>
+      </section>
       {/* <section className="heroSection">
         <p>Tasty</p>
           <p>Food</p>
