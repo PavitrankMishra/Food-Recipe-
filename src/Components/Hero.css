@@ -6,26 +6,38 @@
 }
 
 .heroContainer .heroLeft {
-  width: 60%;
+  width: 50%;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
-  padding-left: 50px;
-  gap: 10px;
-  order: 2px solid red;
+  /* padding-left: 20px; */
+  gap: 30px;
 }
 
 .heroContainer .heroLeft h1 {
   font-size: 120px;
   font-size: 7vw;
+  font-size: 64px;
+  letter-spacing: 4px;
 }
 
 .heroContainer .heroLeft span {
   font-size: 80px;
   font-size: 6vw;
+  font-size: 80px;
   color: #fd6b47;
-  -webkit-text-stroke: 0.3vw #000;
+  letter-spacing: 4%;
+  /* -webkit-text-stroke: 0.3vw #000; */
+}
+
+.heroContainer .heroLeft .subtext {
+  font-size: 24px;
+  letter-spacing: 4%;
+  font-weight: 500;
+  line-height: 30px;
+  color: #5d5d5d;
+  max-width: 681px;
 }
 
 .heroContainer .heroLeft p {
@@ -39,6 +51,44 @@
   background-color: transparent;
   border: none;
   outline: none;
+  cursor: pointer;
+}
+
+.heroContainer .heroLeft input {
+  border: none;
+  border: 3px solid #fd6b47;
+  border-radius: 40px;
+  height: 60px;
+  width: 445px;
+}
+
+.heroContainer .heroLeft .styled-input {
+  color: #736d6d;
+  font-size: 20px;
+  letter-spacing: 40%;
+  line-height: 20px;
+  font-weight: 500;
+  padding-left: 40px;
+  outline: none;
+}
+
+.heroContainer .heroLeft .inputRecipe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.heroContainer .heroLeft .magnifyingContainer {
+  height: 60px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #fd6b47;
+  color: #ffffff;
   cursor: pointer;
 }
 
@@ -57,12 +107,12 @@ a:active {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .heroContainer .heroRight img {
-  height: 100%;
-  width: 28vw;
+  width: 100%;
+  max-height: 600px;
 }
 
 @media screen and (max-width: 600px) {
@@ -83,10 +133,6 @@ a:active {
     font-size: 10vw;
     letter-spacing: 0.2px;
     -webkit-text-stroke: 0.4vw #000;
-    /* font-size: 80px;
-    font-size: 6vw;
-    color: #fd6b47;
-    -webkit-text-stroke: 0.3vw #000; */
   }
 
   .heroContainer .heroLeft {
