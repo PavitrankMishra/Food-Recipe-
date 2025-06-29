@@ -13,13 +13,15 @@ import Working from "./Working";
 import Hero from "./Hero";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ImageSlider from "./ImageSlider";
 
 const Home = () => {
   return (
     <>
       <Header />
       <Hero />
-      <section className="categoriesContainer">
+      <ImageSlider />
+      {/* <section className="categoriesContainer">
         <h1 className="categoriesHeading">TOP CATEGORIES</h1>
         <section className="categoriesSection">
           <section className="card1">
@@ -83,69 +85,7 @@ const Home = () => {
             </section>
           </section>
         </section>
-      </section>
-      {/* <section className="heroSection">
-        <p>Tasty</p>
-          <p>Food</p>
-          <p>Recipes</p>
-          <span>Guaranteed</span>
-        <section className="headingContainer">
-          <h1>Tried</h1> <h1>Tasted</h1> <h1>Trusted</h1>{" "}
-        </section>
-        <span>Spot for The tasty food Recipes</span>
-      </section>
-      <section className="imageContainer">
-        <section className="foodImages">
-          <section className="food">
-            <img src={Pizza} alt="pizza" />
-          </section>
-          <section className="food">
-            <img src={Pasta} />
-          </section>
-          <section className="food">
-            <img src={Burger} />
-          </section>
-          <section className="food">
-            <img src={Cake} />
-          </section>
-          <section className="food">
-            <img src={FrenchFries} />
-          </section>
-          <section className="food">
-            <img src={Cake} />
-          </section>
-          <section className="food">
-            <img src={Noodles} />
-          </section>
-        </section>
-        <section aria-hidden className="foodImages">
-          <section className="food">
-            <img src={Pizza} alt="pizza" />
-          </section>
-          <section className="food">
-            <img src={Pasta} />
-          </section>
-          <section className="food">
-            <img src={Cake} />
-          </section>
-          <section className="food">
-            <img src={Burger} />
-          </section>
-
-          <section className="food">
-            <img src={Cake} />
-          </section>
-          <section className="food">
-            <img src={FrenchFries} />
-          </section>
-          <section className="food">
-            <img src={Noodles} />
-          </section>
-        </section>
       </section> */}
-      {/* <AboutUs /> */}
-      {/* <Banner /> */}
-      {/* <Working /> */}
     </>
   );
 };
